@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 interface NavLink {
   name: string;
@@ -128,8 +129,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo/Site Name */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-teal-500 hover:text-teal-400 transition-colors duration-300">
-              Reyad
+            <Link href="/" className="text-2xl font-bold text-blue-500 hover:text-blue-400 transition-colors duration-300">
+              <Image
+                src="/images/reyad logo.png"
+                alt="Logo"
+                width={100}
+                height={40}
+              />
             </Link>
           </div>
 
@@ -139,11 +145,11 @@ const Header = () => {
               <Link key={link.name} href={link.href} legacyBehavior>
                 <a
                   onClick={(e) => handleScrollToSection(e, link.href)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out
+                  className={`px-3 py-2  text-sm font-medium transition-all duration-300 ease-in-out
                     ${
                       (pathname === link.href && link.href === '/') || activeSection === link.href
-                        ? 'bg-teal-500 text-white transform scale-105'
-                        : 'text-gray-700 hover:bg-teal-50 hover:text-teal-600 hover:scale-105'
+                        ? ' border-b-2 border-blue-500 text-blue-500 transform scale-105'
+                        : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:scale-105'
                     }`}
                 >
                   {link.name}
@@ -212,7 +218,7 @@ const Header = () => {
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ease-in-out
                     ${
                       (pathname === link.href && link.href === '/') || activeSection === link.href
-                        ? 'bg-teal-500 text-white transform scale-105' // Active state with slight scale
+                        ? 'bg-blue-500 text-white transform scale-105' // Active state with slight scale
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white hover:scale-105' // Hover state with slight scale
                     }`}
                 >

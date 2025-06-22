@@ -6,7 +6,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">
-            About <span className="text-teal-400">Me</span>
+            About <span className="text-blue-500">Me</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Psychology meets tech — here's my story.
@@ -15,7 +15,7 @@ const AboutSection = () => {
 
         <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-12 min-h-[400px]">
           <div className="md:w-1/3 w-full flex justify-center mb-8 md:mb-0">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-xl overflow-hidden ring-2 ring-teal-500 shadow-2xl">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-lg overflow-hidden ring-2 ring-blue-500 shadow-2xl">
               <Image
                 src="/reyad.png"
                 alt="About me"
@@ -30,7 +30,7 @@ const AboutSection = () => {
               I'm Reyad — a psychology graduate who loves building things with technology. My curiosity about how people think drives me to create user-friendly digital experiences.
             </p>
             <p>
-              I enjoy turning ideas into clean, simple, and useful products using tools like React and Next.js.
+              I enjoy turning ideas into clean, simple, and useful products using tools like flutter or Next.js.
             </p>
             <p>
               Outside of coding, I love learning new things, thinking deeply, and working on projects that matter.

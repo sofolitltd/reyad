@@ -7,31 +7,31 @@ import { FaGithub, FaLinkedin, FaFacebook, FaYoutube, FaWhatsapp, FaArrowUp } fr
 const socialLinks = [
   {
     name: 'GitHub',
-    href: 'https://github.com/asifreyad',
+    href: 'https://github.com/sofolitltd',
     icon: <FaGithub size={22} />,
     label: 'GitHub Profile',
   },
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com/in/asifreyad',
+    href: 'https://linkedin.com/in/asifuzzamanreyad',
     icon: <FaLinkedin size={22} />,
     label: 'LinkedIn Profile',
   },
   {
     name: 'Facebook',
-    href: 'https://facebook.com/asifreyad',
+    href: 'https://facebook.com/asifuzzamanreyad',
     icon: <FaFacebook size={22} />,
     label: 'Facebook Profile',
   },
   {
     name: 'YouTube',
-    href: 'https://youtube.com/@asifreyad',
+    href: 'https://youtube.com/@sofolitltd',
     icon: <FaYoutube size={22} />,
     label: 'YouTube Channel',
   },
   {
     name: 'WhatsApp',
-    href: 'https://wa.me/01704340860',
+    href: 'https://wa.me/+8801704340860',
     icon: <FaWhatsapp size={22} />,
     label: 'WhatsApp',
   },
@@ -52,7 +52,7 @@ const Footer = () => {
       <button
         onClick={handleScrollTop}
         aria-label="Scroll to top"
-        className="fixed bottom-6 right-6 z-50 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full shadow-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
+        className="fixed bottom-6 right-6 z-50 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
         <FaArrowUp size={22} />
       </button>
@@ -65,7 +65,7 @@ const Footer = () => {
               &copy; {currentYear} Asif Reyad. All rights reserved.
             </p>
             <p className="text-xs mt-1 text-gray-500">
-              Powered by <Link href="https://sofolit.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-500 font-semibold">sofolit.vercel.app</Link>
+              Powered by <Link href="https://sofolit.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 font-semibold">sofolit.vercel.app</Link>
             </p>
           </div>
 
@@ -78,7 +78,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="text-gray-400 hover:text-teal-500 transition-colors duration-300"
+                className="text-gray-400 hover:text-blue-500 transition-colors duration-300"
               >
                 {social.icon}
               </Link>

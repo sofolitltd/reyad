@@ -10,7 +10,6 @@ import {
   FaWhatsapp,
   FaEnvelope,
   FaPhone,
-  FaGlobe,
 } from "react-icons/fa";
 import { Send, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import { sendContactEmail } from "@/app/actions";
@@ -18,40 +17,35 @@ import { sendContactEmail } from "@/app/actions";
 const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/asifreyad",
+    href: "https://github.com/sofolitltd",
     icon: FaGithub,
     label: "GitHub Profile",
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/asifreyad",
+    href: "https://linkedin.com/in/asifuzzamanreyad",
     icon: FaLinkedin,
     label: "LinkedIn Profile",
   },
   {
     name: "Facebook",
-    href: "https://facebook.com/asifreyad",
+    href: "https://facebook.com/asifuzzamanreyad",
     icon: FaFacebook,
     label: "Facebook Profile",
   },
   {
     name: "YouTube",
-    href: "https://youtube.com/@asifreyad",
+    href: "https://youtube.com/@sofolitltd",
     icon: FaYoutube,
     label: "YouTube Channel",
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/01704340860",
+    href: "https://wa.me/+8801704340860",
     icon: FaWhatsapp,
     label: "WhatsApp",
   },
-  {
-    name: "Portfolio",
-    href: "https://sofolit.vercel.app",
-    icon: FaGlobe,
-    label: "Portfolio Website",
-  },
+ 
 ];
 
 const email = "asifreyad1@gmail.com";
@@ -97,21 +91,21 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-teal-50 via-white to-teal-100 text-gray-900">
+    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
           {/* Left: Contact Info & Socials */}
-          <div className="md:w-1/2 bg-gradient-to-br from-teal-500 to-teal-400 text-white flex flex-col justify-between p-8">
+          <div className="md:w-1/2 bg-gradient-to-br from-blue-500 to-blue-400 text-white flex flex-col justify-between p-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
-              <p className="mb-6 text-teal-100">
+              <p className="mb-6 text-blue-100">
                 I’m happy to chat about new projects, collaborations, or just say hello!
               </p>
               <div className="flex items-center mb-4">
                 <FaEnvelope className="mr-3 text-white/80" size={18} />
                 <Link
                   href={`mailto:${email}`}
-                  className="underline hover:text-teal-200 transition"
+                  className="underline hover:text-blue-200 transition"
                 >
                   {email}
                 </Link>
@@ -120,7 +114,7 @@ const ContactSection = () => {
                 <FaPhone className="mr-3 text-white/80" size={18} />
                 <Link
                   href={`tel:${phone}`}
-                  className="underline hover:text-teal-200 transition"
+                  className="underline hover:text-blue-200 transition"
                 >
                   {phone}
                 </Link>
@@ -140,7 +134,7 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-            <div className="mt-8 text-xs text-teal-100/80">
+            <div className="mt-8 text-xs text-blue-100/80">
               I reply to most messages within 24 hours.
             </div>
           </div>
@@ -149,7 +143,7 @@ const ContactSection = () => {
             onSubmit={handleFormSubmit}
             className="md:w-1/2 p-8 flex flex-col justify-center bg-white"
           >
-            <h4 className="text-xl font-semibold text-teal-600 mb-6">Send a Message</h4>
+            <h4 className="text-xl font-semibold text-blue-600 mb-6">Send a Message</h4>
             <div className="mb-4">
               <input
                 type="text"
@@ -158,7 +152,7 @@ const ContactSection = () => {
                 autoComplete="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 border border-teal-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 text-gray-900 bg-teal-50"
+                className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 bg-blue-50"
                 required
               />
             </div>
@@ -170,7 +164,7 @@ const ContactSection = () => {
                 autoComplete="email"
                 value={emailForm}
                 onChange={(e) => setEmailForm(e.target.value)}
-                className="w-full px-4 py-2 border border-teal-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 text-gray-900 bg-teal-50"
+                className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 bg-blue-50"
                 required
               />
             </div>
@@ -181,7 +175,7 @@ const ContactSection = () => {
                 placeholder="Your Message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-4 py-2 border border-teal-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 text-gray-900 bg-teal-50"
+                className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 bg-blue-50"
                 required
               ></textarea>
             </div>
@@ -203,7 +197,7 @@ const ContactSection = () => {
             )}
             <button
               type="submit"
-              className="w-full flex justify-center items-center py-2 px-4 rounded-lg text-lg font-semibold text-white bg-teal-500 hover:bg-teal-600 transition duration-300 shadow focus:outline-none focus:ring-2 focus:ring-teal-400"
+              className="w-full flex justify-center items-center py-2 px-4 rounded-lg text-lg font-semibold text-white bg-blue-500 hover:bg-blue-600 transition duration-300 shadow focus:outline-none focus:ring-2 focus:ring-blue-400"
               disabled={status === "loading"}
             >
               {status === "loading" ? (

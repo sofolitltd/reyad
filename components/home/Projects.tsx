@@ -46,7 +46,7 @@ const featuredProjects: Project[] = [
 			'A mental health and wellbeing app for psychology support and clinic management. Available on web, Android, and Play Store.',
 		imageUrl: '/images/wellbeing.png',
 		tags: ['Mental Health', 'Web', 'Android', 'Play Store', 'Psychology'],
-		liveUrl: '#',
+		liveUrl: 'https://wellbeingclinic.web.app/',
 		githubUrl: '#',
 		category: 'Health & Wellness',
 	},
@@ -67,7 +67,7 @@ const ProjectsSection = () => {
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-12">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						Featured <span className="text-teal-400">Projects</span>
+						Featured <span className="text-blue-400">Projects</span>
 					</h2>
 					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
 						Here are some of the projects I'm proud to have worked on.
@@ -91,7 +91,7 @@ const ProjectsSection = () => {
 				</div>
 				<div className="text-center mt-16">
 					<Link href="/projects" legacyBehavior>
-						<a className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+						<a className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
 							View All Projects
 						</a>
 					</Link>

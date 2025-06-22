@@ -44,7 +44,7 @@ const ExperienceSection = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-10">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          My <span className="text-teal-500">Experience</span>
+          My <span className="text-blue-500">Experience</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           A timeline of my professional journey and key roles.
@@ -70,7 +70,7 @@ const ExperienceSection = () => (
             }}
             icon={exp.icon}
           >
-            <h3 className="text-lg font-bold text-teal-600 mb-1">{exp.title}</h3>
+            <h3 className="text-lg font-bold text-blue-600 mb-1">{exp.title}</h3>
             <p className="text-sm font-medium text-gray-800 mb-1">
               {exp.company} &middot; {exp.location}
             </p>

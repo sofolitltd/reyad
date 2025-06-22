@@ -38,7 +38,7 @@ const SkillsSection = () => {
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-12">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-						My <span className="text-teal-500">Core Skills</span>
+						My <span className="text-blue-500">Core Skills</span>
 					</h2>
 					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
 						Focused on mobile app development, YouTube content, WordPress, and
@@ -50,9 +50,9 @@ const SkillsSection = () => {
 					{skillCategories.map((category) => (
 						<div
 							key={category.name}
-							className="bg-white border border-teal-100 p-6 rounded-lg shadow hover:shadow-teal-200 transition-shadow duration-300"
+							className="bg-white border border-blue-100 p-6 rounded-lg shadow hover:shadow-blue-200 transition-shadow duration-300"
 						>
-							<h3 className="text-xl font-semibold text-teal-500 mb-4">
+							<h3 className="text-xl font-semibold text-blue-500 mb-4">
 								{category.name}
 							</h3>
 							<ul className="space-y-2">
@@ -62,7 +62,7 @@ const SkillsSection = () => {
 										className="text-gray-800 flex items-center"
 									>
 										<svg
-											className="w-4 h-4 mr-2 text-teal-400 flex-shrink-0"
+											className="w-4 h-4 mr-2 text-blue-400 flex-shrink-0"
 											fill="currentColor"
 											viewBox="0 0 20 20"
 										>
@@ -75,7 +75,7 @@ const SkillsSection = () => {
 										<span>
 											{skill}
 											{HIGHLIGHTED.includes(skill) && (
-												<span className="ml-2 inline-flex items-center px-2 py-0.5 rounded bg-teal-500 text-xs font-semibold text-white">
+												<span className="ml-2 inline-flex items-center px-2 py-0.5 rounded bg-blue-500 text-xs font-semibold text-white">
 													Featured
 												</span>
 											)}
