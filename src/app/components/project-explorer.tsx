@@ -48,22 +48,20 @@ const ExplorerNode = ({
   onSelectFile,
   activeFile,
   isExpanded,
-  isOpen,
-  onToggle,
 }: {
   node: FileOrFolder;
   onSelectFile: (fileId: string) => void;
   activeFile: string;
   isExpanded: boolean;
-  isOpen: boolean;
-  onToggle: () => void;
 }) => {
+  const [isOpen, setIsOpen] = useState(true);
+
   if (node.type === "folder") {
     return (
       <div>
         <div
           className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted"
-          onClick={onToggle}
+          onClick={() => setIsOpen(!isOpen)}
         >
           {isExpanded && (
             <ChevronRight
@@ -82,8 +80,6 @@ const ExplorerNode = ({
                 onSelectFile={onSelectFile}
                 activeFile={activeFile}
                 isExpanded={isExpanded}
-                isOpen={true} // Child nodes are always "open" in this context
-                onToggle={() => {}} // Children don't toggle folders
               />
             ))}
           </div>
@@ -119,7 +115,6 @@ export function ProjectExplorer({
   isExpanded: boolean;
   onToggleExpand: () => void;
 }) {
-    const [isLibOpen, setIsLibOpen] = useState(true);
 
   return (
     <div>
@@ -148,8 +143,6 @@ export function ProjectExplorer({
           onSelectFile={onSelectFile}
           activeFile={activeFile}
           isExpanded={isExpanded}
-          isOpen={isLibOpen}
-          onToggle={() => setIsLibOpen(!isLibOpen)}
         />
       ) : (
         <div className="flex flex-col items-center gap-4 mt-4">
