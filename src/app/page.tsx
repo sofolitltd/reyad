@@ -1,15 +1,31 @@
 "use client";
 
 import { useState } from "react";
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  horizontalListSortingStrategy,
+} from "@dnd-kit/sortable";
+
 import { AboutSection } from "./components/about-section";
 import { BlogSection } from "./components/blog-section";
 import { ContactSection } from "./components/contact-section";
 import { PortfolioSection } from "./components/portfolio-section";
 import { SkillsSection } from "./components/skills-section";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { File, Code, Briefcase, Rss, Mail, X } from "lucide-react";
+import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs";
+import { File, Code, Briefcase, Rss, Mail } from "lucide-react";
 import { IdeLayout } from "./components/ide-layout";
-import { Button } from "@/components/ui/button";
+import { DraggableTab } from "./components/draggable-tab";
 
 const allSections = [
   { id: "about", label: "about.dart", icon: File, component: <AboutSection /> },
@@ -22,6 +38,13 @@ const allSections = [
 export default function Home() {
   const [openTabs, setOpenTabs] = useState(allSections);
   const [activeTab, setActiveTab] = useState("about");
+
+    const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   const handleSelectFile = (fileId: string) => {
     if (!openTabs.find((tab) => tab.id === fileId)) {
@@ -53,29 +76,38 @@ export default function Home() {
     }
   };
 
+  function handleDragEnd(event: DragEndEvent) {
+    const { active, over } = event;
+
+    if (over && active.id !== over.id) {
+      setOpenTabs((items) => {
+        const oldIndex = items.findIndex(item => item.id === active.id);
+        const newIndex = items.findIndex(item => item.id === over.id);
+        return arrayMove(items, oldIndex, newIndex);
+      });
+    }
+  }
+
   return (
     <IdeLayout onSelectFile={handleSelectFile} activeFile={activeTab}>
       <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col h-full">
-        <TabsList className="bg-[#2a2d3d] border-b border-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
-          {openTabs.map((section) => (
-            <TabsTrigger
-              key={section.id}
-              value={section.id}
-              className="h-full rounded-none px-3 pr-2 text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground border-r border-transparent data-[state=active]:border-border flex-shrink-0 group"
-            >
-              <section.icon className="w-4 h-4 mr-2" />
-              <span className="mr-2">{section.label}</span>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-5 w-5 rounded-sm invisible group-hover:visible data-[state=active]:group-hover:visible"
-                onClick={(e) => handleCloseTab(e, section.id)}
-              >
-                  <X className="w-3 h-3" />
-              </Button>
-            </TabsTrigger>
-          ))}
-        </TabsList>
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCenter}
+          onDragEnd={handleDragEnd}
+        >
+          <TabsList className="bg-[#2a2d3d] border-b border-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
+              <SortableContext items={openTabs} strategy={horizontalListSortingStrategy}>
+                {openTabs.map((section) => (
+                  <DraggableTab
+                    key={section.id}
+                    section={section}
+                    handleCloseTab={handleCloseTab}
+                  />
+                ))}
+              </SortableContext>
+          </TabsList>
+        </DndContext>
           
         <div className="bg-background flex-1 overflow-y-auto">
           {openTabs.length > 0 ? (
