@@ -13,7 +13,7 @@ export function IdeFooter() {
   }, []);
 
   return (
-    <footer className="bg-[#2a2d3d] text-sm text-muted-foreground flex items-center justify-between px-4 py-1 border-t border-border fixed bottom-0 left-0 right-0 z-20">
+    <footer className="bg-[#2a2d3d] text-sm text-muted-foreground flex items-center justify-between px-4 py-1 border-t border-border z-20">
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-1">
           <GitBranch className="w-4 h-4 text-accent" />

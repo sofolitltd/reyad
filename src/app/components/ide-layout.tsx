@@ -28,14 +28,14 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
   }, []);
 
   return (
-    <div className="flex flex-col h-screen bg-[#2a2d3d]">
+    <div className="flex flex-col h-screen bg-[#2a2d3d] overflow-hidden">
       <SiteHeader />
       <div className="flex flex-grow pt-12 relative">
         <aside
           className={cn(
-            "bg-[#2a2d3d] text-white p-2 border-r border-border transition-all duration-300 ease-in-out h-full z-10",
+            "bg-[#2a2d3d] text-white p-2 border-r border-border transition-all duration-300 ease-in-out h-full z-20",
             "md:relative md:flex-shrink-0",
-            "absolute", // Mobile: absolute positioning
+            "absolute", // Mobile: absolute positioning as an overlay
             isExplorerOpen ? "w-64" : "w-16"
           )}
         >
@@ -46,17 +46,17 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
             onToggleExpand={() => setIsExplorerOpen(!isExplorerOpen)}
           />
         </aside>
-        <main
-          className={cn(
-            "flex-1 flex flex-col bg-background h-full transition-all duration-300 ease-in-out",
-             "md:ml-0",
-             "ml-16"
-          )}
-        >
-          {children}
-        </main>
+        
+        <div className={cn("flex-1 flex flex-col bg-background h-full transition-all duration-300 ease-in-out", 
+            "md:ml-0",
+            !isExplorerOpen && "ml-16" // Default margin for collapsed mobile view
+        )}>
+          <main className="flex-1 overflow-y-auto">
+            {children}
+          </main>
+          <IdeFooter />
+        </div>
       </div>
-      <IdeFooter />
     </div>
   );
 }
