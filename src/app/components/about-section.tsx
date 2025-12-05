@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
-import { Code, GitBranch, Heart, Facebook, Linkedin, Youtube } from "lucide-react";
+import { Code, GitBranch, Heart, Facebook, Linkedin, Youtube, User } from "lucide-react";
 
 const profileImage = PlaceHolderImages.find(
   (img) => img.id === "profile-picture"
@@ -64,7 +64,7 @@ export function AboutSection() {
             <CardContent className="p-6">
               {profileImage && (
                 <Image
-                  src={profileImage.imageUrl}
+                  src="https://reyad.vercel.app/reyad.png"
                   alt="Developer's Headshot"
                   width={120}
                   height={120}
@@ -76,13 +76,13 @@ export function AboutSection() {
               <p className="text-primary">Flutter Developer</p>
               <div className="flex justify-center gap-4 mt-4">
                 <Link href="#" aria-label="Facebook Profile">
-                  <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                  <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
                 <Link href="#" aria-label="LinkedIn Profile">
-                  <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                  <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
                 <Link href="#" aria-label="YouTube Channel">
-                  <Youtube className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                  <Youtube className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
               </div>
             </CardContent>
@@ -90,7 +90,7 @@ export function AboutSection() {
           <Card>
             <CardHeader>
               <CardTitle className="font-headline text-xl flex items-center gap-2">
-                <Heart className="w-5 h-5 text-primary" />
+                <User className="w-5 h-5 text-primary" />
                 Who I Am
               </CardTitle>
             </CardHeader>
