@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
-import { Code, GitBranch, Heart } from "lucide-react";
+import Link from "next/link";
+import { Code, GitBranch, Heart, Facebook, Linkedin, Youtube } from "lucide-react";
 
 const profileImage = PlaceHolderImages.find(
   (img) => img.id === "profile-picture"
@@ -32,7 +33,7 @@ class ProfileCard extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           const Text(
-            "Reyad",
+            "Md Asifuzzaman Reyad",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -71,8 +72,19 @@ export function AboutSection() {
                   data-ai-hint={profileImage.imageHint}
                 />
               )}
-              <h3 className="text-2xl font-bold font-headline">Reyad</h3>
+              <h3 className="text-2xl font-bold font-headline">Md Asifuzzaman Reyad</h3>
               <p className="text-primary">Flutter Developer</p>
+              <div className="flex justify-center gap-4 mt-4">
+                <Link href="#" aria-label="Facebook Profile">
+                  <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                </Link>
+                <Link href="#" aria-label="LinkedIn Profile">
+                  <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                </Link>
+                <Link href="#" aria-label="YouTube Channel">
+                  <Youtube className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
+                </Link>
+              </div>
             </CardContent>
           </Card>
           <Card>
