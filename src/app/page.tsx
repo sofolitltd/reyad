@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   DndContext,
   closestCenter,
@@ -38,8 +38,13 @@ const allSections = [
 export default function Home() {
   const [openTabs, setOpenTabs] = useState(allSections);
   const [activeTab, setActiveTab] = useState("about");
+  const [isClient, setIsClient] = useState(false);
 
-    const sensors = useSensors(
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
@@ -54,12 +59,12 @@ export default function Home() {
       }
     }
     setActiveTab(fileId);
-  }
+  };
 
   const handleCloseTab = (e: React.MouseEvent, tabId: string) => {
     e.stopPropagation(); // prevent the tab from being selected
     const tabIndex = openTabs.findIndex((tab) => tab.id === tabId);
-    
+
     // Remove the tab
     const newOpenTabs = openTabs.filter((tab) => tab.id !== tabId);
     setOpenTabs(newOpenTabs);
@@ -81,8 +86,8 @@ export default function Home() {
 
     if (over && active.id !== over.id) {
       setOpenTabs((items) => {
-        const oldIndex = items.findIndex(item => item.id === active.id);
-        const newIndex = items.findIndex(item => item.id === over.id);
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
         return arrayMove(items, oldIndex, newIndex);
       });
     }
@@ -91,12 +96,13 @@ export default function Home() {
   return (
     <IdeLayout onSelectFile={handleSelectFile} activeFile={activeTab}>
       <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col h-full">
-        <DndContext
-          sensors={sensors}
-          collisionDetection={closestCenter}
-          onDragEnd={handleDragEnd}
-        >
-          <TabsList className="bg-sidebar border-b border-sidebar-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
+        {isClient ? (
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+          >
+            <TabsList className="bg-sidebar border-b border-sidebar-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
               <SortableContext items={openTabs} strategy={horizontalListSortingStrategy}>
                 {openTabs.map((section) => (
                   <DraggableTab
@@ -106,22 +112,33 @@ export default function Home() {
                   />
                 ))}
               </SortableContext>
+            </TabsList>
+          </DndContext>
+        ) : (
+          <TabsList className="bg-sidebar border-b border-sidebar-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
+            {openTabs.map((section) => (
+              <DraggableTab
+                key={section.id}
+                section={section}
+                handleCloseTab={handleCloseTab}
+              />
+            ))}
           </TabsList>
-        </DndContext>
-          
+        )}
+
         <div className="bg-background flex-1 overflow-y-auto">
           {openTabs.length > 0 ? (
-               allSections.map((section) => (
-                  <TabsContent key={section.id} value={section.id} className="mt-0 h-full">
-                    <div className="container mx-auto px-4 py-8 md:py-12 h-full">
-                      {section.component}
-                    </div>
-                  </TabsContent>
-                ))
+            allSections.map((section) => (
+              <TabsContent key={section.id} value={section.id} className="mt-0 h-full">
+                <div className="container mx-auto px-4 py-8 md:py-12 h-full">
+                  {section.component}
+                </div>
+              </TabsContent>
+            ))
           ) : (
-              <div className="flex h-full items-center justify-center text-muted-foreground">
-                  <p>Select a file to view</p>
-              </div>
+            <div className="flex h-full items-center justify-center text-muted-foreground">
+              <p>Select a file to view</p>
+            </div>
           )}
         </div>
       </Tabs>
