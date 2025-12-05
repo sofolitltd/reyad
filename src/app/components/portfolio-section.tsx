@@ -4,6 +4,17 @@ import { ProjectCard } from "./project-card";
 
 const projectsData: Project[] = [
   {
+    id: "proj-7",
+    title: "Scroll to Top Button",
+    description: "A reusable 'Scroll to Top' button component for React, built with Tailwind CSS. It features a smooth scroll animation and a clean, modern design that can be easily integrated into any project.",
+    imageUrl: PlaceHolderImages.find((img) => img.id === "project-7-screenshot")!
+      .imageUrl,
+    imageHint: PlaceHolderImages.find((img) => img.id === "project-7-screenshot")!
+      .imageHint,
+    tags: ["React", "Tailwind CSS", "UI Component"],
+    repoLink: "https://github.com/example/scroll-to-top-button",
+  },
+  {
     id: "proj-4",
     title: "Doctor App",
     description: "A Flutter application for booking doctor appointments, managing patient records, and handling online consultations.",
@@ -53,7 +64,7 @@ const projectsData: Project[] = [
     id: "proj-2",
     title: "Fitness Tracker App",
     description:
-      "A comprehensive fitness tracking application to monitor workouts and progress, built with Flutter and GetX for state management.",
+      "A comprehensive fitness tracking application to monitor workouts, set goals, and view progress over time. Built with Flutter and uses GetX for state management.",
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-2-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-2-screenshot")!
