@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
-import { Code, GitBranch, Facebook, Linkedin, Youtube, User, Feather, Download } from "lucide-react";
+import { Code, GitBranch, Facebook, Linkedin, Youtube, User, Feather, Download, Github, Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const profileImage = PlaceHolderImages.find(
@@ -97,17 +97,36 @@ export function AboutSection() {
                 >
                   <Youtube className="w-5 h-5 text-red-600" />
                 </Link>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6 flex justify-center">
-              <Button asChild>
-                <Link href="/reyad-cv.pdf" download>
-                  <Download className="mr-2 h-4 w-4" />
-                  Download CV
+                 <Link
+                  href="#"
+                  aria-label="GitHub Profile"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
+                >
+                  <Github className="w-5 h-5" />
                 </Link>
-              </Button>
+                 <Link
+                  href="#"
+                  aria-label="Send an Email"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
+                >
+                  <Mail className="w-5 h-5 text-gray-400" />
+                </Link>
+                 <Link
+                  href="#"
+                  aria-label="WhatsApp"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
+                >
+                  <MessageSquare className="w-5 h-5 text-green-500" />
+                </Link>
+              </div>
+              <div className="mt-6">
+                <Button asChild className="w-full">
+                    <Link href="/reyad-cv.pdf" download>
+                    <Download className="mr-2 h-4 w-4" />
+                    Download CV
+                    </Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
           <Card>
