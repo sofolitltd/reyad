@@ -1,6 +1,10 @@
-/**
- * @type {import('next').NextConfig}
- */
-import nextConfig from './next.config.mjs';
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    // This is required to allow the Next.js dev server to accept requests from the browser
+    // in this Cloud Workstation environment.
+    allowedDevOrigins: ["*.cloudworkstations.dev"],
+  },
+};
 
 export default nextConfig;
