@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
-import { Code, GitBranch, Heart, Facebook, Linkedin, Youtube, User } from "lucide-react";
+import { Code, GitBranch, Facebook, Linkedin, Youtube, User } from "lucide-react";
 
 const profileImage = PlaceHolderImages.find(
   (img) => img.id === "profile-picture"
