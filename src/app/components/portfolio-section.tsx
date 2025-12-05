@@ -4,85 +4,70 @@ import { ProjectCard } from "./project-card";
 
 const projectsData: Project[] = [
   {
-    id: "proj-7",
-    title: "Scroll to Top Button",
-    description: "A reusable 'Scroll to Top' button component for React, built with Tailwind CSS. It features a smooth scroll animation and a clean, modern design that can be easily integrated into any project.",
-    imageUrl: PlaceHolderImages.find((img) => img.id === "project-7-screenshot")!
-      .imageUrl,
-    imageHint: PlaceHolderImages.find((img) => img.id === "project-7-screenshot")!
-      .imageHint,
-    tags: ["React", "Tailwind CSS", "UI Component"],
-    repoLink: "https://github.com/example/scroll-to-top-button",
-  },
-  {
-    id: "proj-4",
-    title: "Doctor App",
-    description: "A Flutter application for booking doctor appointments, managing patient records, and handling online consultations.",
-    imageUrl: PlaceHolderImages.find((img) => img.id === "project-4-screenshot")!
-      .imageUrl,
-    imageHint: PlaceHolderImages.find((img) => img.id === "project-4-screenshot")!
-      .imageHint,
-    tags: ["Flutter", "Dart", "Firebase", "GetX"],
-    repoLink: "https://github.com/sofolitltd/doctor-app",
-  },
-  {
-    id: "proj-5",
-    title: "Food Delivery App UI",
-    description: "A beautiful and responsive UI kit for a food delivery application, built with Flutter. Includes over 30 unique screens.",
-    imageUrl: PlaceHolderImages.find((img) => img.id === "project-5-screenshot")!
-      .imageUrl,
-    imageHint: PlaceHolderImages.find((img) => img.id === "project-5-screenshot")!
-      .imageHint,
-    tags: ["Flutter", "Dart", "UI/UX"],
-    repoLink: "https://github.com/sofolitltd/food-delivery-app-ui",
-  },
-  {
-    id: "proj-6",
-    title: "Real Estate App UI",
-    description: "A clean and modern UI for a real estate application. Features property listings, search filters, and agent profiles. Built with Flutter.",
-    imageUrl: PlaceHolderImages.find((img) => img.id === "project-6-screenshot")!
-      .imageUrl,
-    imageHint: PlaceHolderImages.find((img) => img.id === "project-6-screenshot")!
-      .imageHint,
-    tags: ["Flutter", "Dart", "UI Design"],
-    repoLink: "https://github.com/sofolitltd/real-estate-app-flutter-ui",
-  },
-  {
     id: "proj-1",
-    title: "E-Commerce App",
-    description:
-      "A full-featured e-commerce application built with Flutter, using Provider for state management and Firebase for backend services.",
+    title: "Campus Assistant",
+    description: "A comprehensive education app for university students, featuring course management, campus info, and notifications.",
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-1-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-1-screenshot")!
       .imageHint,
-    tags: ["Flutter", "Dart", "Firebase", "Provider"],
-    repoLink: "https://github.com/example/ecommerce-flutter-app",
-    liveLink: "#",
+    tags: ["Flutter", "Firebase", "Figma", "Android", "Web"],
+    liveLink: "https://play.google.com/store/apps/details?id=com.sofolit.campusassistant",
   },
   {
     id: "proj-2",
-    title: "Fitness Tracker App",
-    description:
-      "A comprehensive fitness tracking application to monitor workouts, set goals, and view progress over time. Built with Flutter and uses GetX for state management.",
+    title: "The Forge",
+    description: "A modern portfolio website for The Forge, built with Next.js and Sanity CMS, deployed on Vercel.",
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-2-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-2-screenshot")!
       .imageHint,
-    tags: ["Flutter", "Dart", "GetX", "SQLite"],
-    repoLink: "https://github.com/example/fitness-tracker-flutter",
+    tags: ["Next.js", "Sanity CMS", "Vercel", "Portfolio"],
+    liveLink: "https://theforgebd.vercel.app/",
   },
-  {
+    {
     id: "proj-3",
-    title: "Movie Discovery App",
-    description:
-      "A sleek movie discovery app using the TMDB API, built with Flutter and Riverpod for state management. Features clean architecture and beautiful animations.",
+    title: "Petelements BD",
+    description: "An e-commerce website for a pet shop, built with WordPress. Features product catalog, cart, and online ordering.",
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-3-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-3-screenshot")!
       .imageHint,
-    tags: ["Flutter", "Dart", "Riverpod", "Dio"],
-    liveLink: "#",
+    tags: ["WordPress", "E-commerce", "WooCommerce"],
+    liveLink: "https://www.petelementsbd.com/",
+  },
+  {
+    id: "proj-4",
+    title: "Wellbeing Clinic",
+    description: "A mental health and wellbeing app for psychology support and clinic management. Available on web, Android, and Play Store.",
+    imageUrl: PlaceHolderImages.find((img) => img.id === "project-4-screenshot")!
+      .imageUrl,
+    imageHint: PlaceHolderImages.find((img) => img.id === "project-4-screenshot")!
+      .imageHint,
+    tags: ["Mental Health", "Web", "Android", "Psychology", "Flutter"],
+    liveLink: "https://wellbeingclinic.web.app/",
+  },
+  {
+    id: "proj-5",
+    title: "Blood Finder App",
+    description: "A web application to help connect blood donors with recipients in need. Built with Flutter for cross-platform availability.",
+    imageUrl: PlaceHolderImages.find((img) => img.id === "project-5-screenshot")!
+      .imageUrl,
+    imageHint: PlaceHolderImages.find((img) => img.id === "project-5-screenshot")!
+      .imageHint,
+    tags: ["Flutter", "Firebase", "Health"],
+    liveLink: "https://bloodfinder.web.app/",
+  },
+  {
+    id: "proj-6",
+    title: "Doctor App",
+    description: "A Flutter application for booking doctor appointments, managing patient records, and handling online consultations.",
+    imageUrl: PlaceHolderImages.find((img) => img.id === "project-6-screenshot")!
+      .imageUrl,
+    imageHint: PlaceHolderImages.find((img) => img.id === "project-6-screenshot")!
+      .imageHint,
+    tags: ["Flutter", "Dart", "Firebase", "GetX"],
+    repoLink: "https://github.com/sofolitltd/doctor-app",
   },
 ];
 

@@ -8,45 +8,39 @@
     },
     {
       "id": "project-1-screenshot",
-      "description": "Screenshot of Project One.",
-      "imageUrl": "https://images.unsplash.com/photo-1644143155332-2ae7baf7d32f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YXBwJTIwc2NyZWVuc2hvdHxlbnwwfHx8fDE3NjQ5NTE0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "app screenshot"
+      "description": "Screenshot of Campus Assistant App.",
+      "imageUrl": "https://images.unsplash.com/photo-1762329393085-26274e902fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlZHVjYXRpb24lMjBhcHB8ZW58MHx8fHwxNzY0OTYzMDI5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "education app"
     },
     {
       "id": "project-2-screenshot",
-      "description": "Screenshot of Project Two.",
-      "imageUrl": "https://images.unsplash.com/photo-1667284152849-850edc1b341e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2JpbGUlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzY0OTIzNzgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "mobile interface"
+      "description": "Screenshot of The Forge Website.",
+      "imageUrl": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0Zm9saW8lMjB3ZWJzaXRlfGVufDB8fHx8MTc2NDkxNjgyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portfolio website"
     },
     {
       "id": "project-3-screenshot",
-      "description": "Screenshot of Project Three.",
-      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjB1aXxlbnwwfHx8fDE3NjQ5Mzk2OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dashboard ui"
+      "description": "Screenshot of Petelements BD Website.",
+      "imageUrl": "https://images.unsplash.com/photo-1657812159075-7f0abd98f7b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDB8fHx8MTc2NDk1NjA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce website"
     },
     {
       "id": "project-4-screenshot",
-      "description": "Screenshot of Doctor App project.",
-      "imageUrl": "https://images.unsplash.com/photo-1631507623095-c710d184498f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2FsJTIwYXBwfGVufDB8fHx8MTc2NDk2MTUxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "medical app"
+      "description": "Screenshot of Wellbeing Clinic App.",
+      "imageUrl": "https://images.unsplash.com/photo-1663661759357-5ab792c79dd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxoZWFsdGglMjBhcHB8ZW58MHx8fHwxNzY0OTM3ODg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "health app"
     },
     {
       "id": "project-5-screenshot",
-      "description": "Screenshot of Food Delivery App project.",
-      "imageUrl": "https://images.unsplash.com/photo-1729860649884-40ec104f9dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmb29kJTIwYXBwfGVufDB8fHx8MTc2NDkyMDQxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "food app"
+      "description": "Screenshot of Blood Finder App.",
+      "imageUrl": "https://images.unsplash.com/photo-1659353887211-1a3aa8426aa5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtZWRpY2FsJTIwYXBwfGVufDB8fHx8MTc2NDk2MTUxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical app"
     },
     {
       "id": "project-6-screenshot",
-      "description": "Screenshot of Real Estate App project.",
-      "imageUrl": "https://images.unsplash.com/photo-1740440811799-a5db75bce6d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob3VzZSUyMGxpc3RpbmdzfGVufDB8fHx8MTc2NDk2MTUxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "house listings"
-    },
-    {
-      "id": "project-7-screenshot",
-      "description": "Screenshot of a UI component.",
-      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxVSUyUyMGNvbXBvbmVudHxlbnwwfHx8fDE3NjUwMjU0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "UI component"
+      "description": "Screenshot of Doctor App project.",
+      "imageUrl": "https://images.unsplash.com/photo-1587400873647-ae5485239fed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb2N0b3IlMjBhcHB8ZW58MHx8fHwxNzY0OTYzMDI5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor app"
     },
     {
       "id": "blog-1-thumbnail",
