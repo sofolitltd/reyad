@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const structure = {
   name: "portfolio",
@@ -117,6 +119,8 @@ export function ProjectExplorer({
   isExpanded: boolean;
   onToggleExpand: () => void;
 }) {
+    const [isLibOpen, setIsLibOpen] = useState(true);
+
   return (
     <div>
       <div
@@ -144,8 +148,8 @@ export function ProjectExplorer({
           onSelectFile={onSelectFile}
           activeFile={activeFile}
           isExpanded={isExpanded}
-          isOpen={true}
-          onToggle={() => {}}
+          isOpen={isLibOpen}
+          onToggle={() => setIsLibOpen(!isLibOpen)}
         />
       ) : (
         <div className="flex flex-col items-center gap-4 mt-4">
