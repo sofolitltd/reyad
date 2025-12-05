@@ -13,38 +13,38 @@ import { Badge } from "@/components/ui/badge";
 const posts: Post[] = [
   {
     id: "blog-1",
-    title: "Mastering State Management in Jetpack Compose",
+    title: "Advanced State Management in Flutter with Riverpod",
     description:
-      "A deep dive into different state management patterns in Jetpack Compose, from simple state hoisting to using ViewModels and Hilt.",
+      "A comprehensive guide to leveraging Riverpod for scalable and maintainable state management in your Flutter applications.",
     imageUrl: PlaceHolderImages.find((p) => p.id === "blog-1-thumbnail")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((p) => p.id === "blog-1-thumbnail")!
       .imageHint,
-    date: "July 15, 2024",
+    date: "July 18, 2024",
     author: "Reyad",
   },
   {
     id: "blog-2",
-    title: "Building Dynamic UIs with Compose Modifiers",
+    title: "Creating Custom Animations with Flutter's AnimationController",
     description:
-      "Explore tips and tricks for creating stunning and responsive user interfaces using Jetpack Compose's powerful modifier system.",
+      "Unlock the power of custom animations in Flutter. Learn how to use AnimationController and Tweens to bring your UI to life.",
     imageUrl: PlaceHolderImages.find((p) => p.id === "blog-2-thumbnail")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((p) => p.id === "blog-2-thumbnail")!
       .imageHint,
-    date: "June 28, 2024",
+    date: "June 30, 2024",
     author: "Reyad",
   },
   {
     id: "blog-3",
-    title: "Android & Firebase: A Powerful Combination",
+    title: "Integrating Firebase into Your Flutter App",
     description:
-      "Learn how to integrate Firebase into your Android app for backend services like authentication, Firestore, and cloud functions.",
+      "Step-by-step tutorial on adding Firebase for backend services like Authentication, Firestore, and Cloud Functions to your Flutter project.",
     imageUrl: PlaceHolderImages.find((p) => p.id === "blog-3-thumbnail")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((p) => p.id === "blog-3-thumbnail")!
       .imageHint,
-    date: "May 10, 2024",
+    date: "May 22, 2024",
     author: "Reyad",
   },
 ];

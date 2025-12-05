@@ -3,7 +3,7 @@
     {
       "id": "profile-picture",
       "description": "Professional headshot of the developer.",
-      "imageUrl": "https://images.unsplash.com/photo-1573496358961-3c82861ab8f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjQ5MjMyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://reyad.vercel.app/reyad.png",
       "imageHint": "professional headshot"
     },
     {

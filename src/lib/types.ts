@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export type Project = {
   id: string;
   title: string;
@@ -12,7 +14,7 @@ export type Project = {
 export type Skill = {
   name: string;
   proficiency: number;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ComponentType<{ className?: string }> | LucideIcon;
 };
 
 export type Post = {

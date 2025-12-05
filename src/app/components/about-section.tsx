@@ -7,23 +7,25 @@ const profileImage = PlaceHolderImages.find(
 );
 
 const codeSnippet = `
-// MainActivity.kt
-import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+// main.dart
+import 'package:flutter/material.dart';
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            Greeting(name = "Reyad")
-        }
-    }
+void main() {
+  runApp(const MyApp());
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello, $name! Welcome to my portfolio.")
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Reyad's Portfolio")),
+        body: const Center(child: Text('Hello, Flutter!')),
+      ),
+    );
+  }
 }
 `;
 
@@ -46,28 +48,21 @@ export function AboutSection() {
               )}
               <div>
                 <h3 className="text-2xl font-bold font-headline">Reyad</h3>
-                <p className="text-primary">Android Developer</p>
+                <p className="text-primary">Flutter Developer</p>
               </div>
             </div>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I am a dedicated and detail-oriented Android developer with a
-                passion for crafting high-quality, user-friendly mobile
-                applications. With a strong command of Kotlin and a deep
-                understanding of the Android SDK and Jetpack Compose, I specialize in
-                building native apps that are both robust and visually appealing.
+                I am a passionate and results-driven Flutter developer with a knack for creating beautiful, high-performance cross-platform applications. With a strong foundation in Dart and a deep understanding of the Flutter framework, I specialize in building mobile apps that provide a seamless user experience on both iOS and Android.
               </p>
               <p>
-                My journey into mobile development was sparked by a desire to build
-                tools that make a difference in people's daily lives. I've had the
-                opportunity to work on a variety of projects, from personal utilities to
-                complex, scalable applications for a wide range of users. You can check out some of my work on{' '}
+                My journey into mobile development started with a fascination for building things that people can interact with on-the-go. I enjoy tackling complex challenges and turning ideas into polished, production-ready apps. Check out my work and contributions on{' '}
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GitHub</a>.
               </p>
             </div>
           </div>
           <div className="bg-muted/40 p-6 md:p-8 rounded-lg">
-            <pre className="language-kotlin bg-background/50 rounded-lg p-4 overflow-x-auto text-sm font-code h-full">
+            <pre className="language-dart bg-background/50 rounded-lg p-4 overflow-x-auto text-sm font-code h-full">
               <code>{codeSnippet}</code>
             </pre>
           </div>

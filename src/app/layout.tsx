@@ -8,6 +8,7 @@ import {
   Github,
   Linkedin,
   Twitter,
+  Feather
 } from "lucide-react";
 import {
   SidebarContent,
@@ -21,7 +22,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Reyad's Portfolio",
-  description: "A modern portfolio for an Android Developer.",
+  description: "A modern portfolio for a Flutter Developer.",
 };
 
 export default function RootLayout({
@@ -49,29 +50,7 @@ export default function RootLayout({
             >
               <SidebarHeader className="p-2 justify-center">
                 <Link href="/" className="flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    className="h-8 w-8 text-primary"
-                  >
-                    <rect width="256" height="256" fill="none" />
-                    <path
-                      d="M32,200l80-80,48,48,80-80"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="24"
-                    />
-                    <polyline
-                      points="192 72 240 72 240 120"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="24"
-                    />
-                  </svg>
+                   <Feather className="h-8 w-8 text-primary"/>
                 </Link>
               </SidebarHeader>
               <SidebarContent className="p-2">

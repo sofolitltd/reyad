@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SidebarTrigger } from "./ui/sidebar";
+import { Feather } from "lucide-react";
 
 export function SiteHeader() {
   return (
@@ -10,29 +11,7 @@ export function SiteHeader() {
         </div>
         <div className="flex items-center gap-2 ml-4 md:ml-0">
           <Link href="/" className="flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 256 256"
-              className="h-6 w-6 text-primary"
-            >
-              <rect width="256" height="256" fill="none" />
-              <path
-                d="M32,200l80-80,48,48,80-80"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="24"
-              />
-              <polyline
-                points="192 72 240 72 240 120"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="24"
-              />
-            </svg>
+            <Feather className="h-6 w-6 text-primary"/>
             <span className="font-bold text-lg">Reyad's Portfolio</span>
           </Link>
         </div>

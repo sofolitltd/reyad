@@ -1,17 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import type { Skill } from "@/lib/types";
-import { Code, Database, Smartphone, GitBranch } from "lucide-react";
+import { Code, Database, Smartphone, GitBranch, Feather } from "lucide-react";
 
 const skills: Skill[] = [
-  { name: "Kotlin", proficiency: 95, icon: Code },
-  { name: "Jetpack Compose", proficiency: 90, icon: Smartphone },
-  { name: "Android SDK", proficiency: 88, icon: Smartphone },
-  { name: "Git", proficiency: 85, icon: GitBranch },
-  { name: "Room/SQLite", proficiency: 80, icon: Database },
-  { name: "ViewModel/LiveData", proficiency: 90, icon: Code },
+  { name: "Flutter", proficiency: 95, icon: Feather },
+  { name: "Dart", proficiency: 92, icon: Code },
+  { name: "Firebase", proficiency: 85, icon: Database },
+  { name: "Git", proficiency: 88, icon: GitBranch },
+  { name: "Provider/Riverpod", proficiency: 89, icon: Code },
   { name: "REST APIs", proficiency: 85, icon: Code },
-  { name: "UI/UX Design", proficiency: 75, icon: Smartphone },
+  { name: "Bloc", proficiency: 80, icon: Code },
+  { name: "UI/UX Design", proficiency: 78, icon: Smartphone },
 ];
 
 export function SkillsSection() {

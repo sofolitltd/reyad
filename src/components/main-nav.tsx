@@ -2,11 +2,10 @@
 
 import {
   Briefcase,
-  Home,
+  Code,
   Mail,
   Rss,
   User,
-  Wrench,
 } from "lucide-react";
 import Link from "next/link";
 import {
@@ -17,7 +16,7 @@ import {
 
 const navItems = [
   { href: "#about", icon: User, label: "About", tooltip: "About Me" },
-  { href: "#skills", icon: Wrench, label: "Skills", tooltip: "My Skills" },
+  { href: "#skills", icon: Code, label: "Skills", tooltip: "My Skills" },
   {
     href: "#portfolio",
     icon: Briefcase,
