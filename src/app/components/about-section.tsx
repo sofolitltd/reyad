@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
-import { Code, GitBranch, Facebook, Linkedin, Youtube, User } from "lucide-react";
+import { Code, GitBranch, Facebook, Linkedin, Youtube, User, Feather } from "lucide-react";
 
 const profileImage = PlaceHolderImages.find(
   (img) => img.id === "profile-picture"
@@ -103,7 +103,7 @@ export function AboutSection() {
            <Card>
             <CardHeader>
               <CardTitle className="font-headline text-xl flex items-center gap-2">
-                <Code className="w-5 h-5 text-primary" />
+                <Feather className="w-5 h-5 text-primary" />
                 My Philosophy
               </CardTitle>
             </CardHeader>
