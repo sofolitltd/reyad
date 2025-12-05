@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ProjectExplorer } from "./project-explorer";
 import { IdeFooter } from "./ide-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -14,15 +14,19 @@ interface IdeLayoutProps {
 
 export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps) {
   const isMobile = useIsMobile();
-  const [isExplorerOpen, setIsExplorerOpen] = useState(!isMobile);
+  const [isExplorerOpen, setIsExplorerOpen] = useState(true);
+
+  useEffect(() => {
+    setIsExplorerOpen(!isMobile);
+  }, [isMobile]);
 
   return (
     <div className="flex flex-col h-screen bg-[#2a2d3d]">
       <SiteHeader />
-      <div className="flex flex-grow overflow-hidden">
+      <div className="flex flex-grow overflow-hidden pt-12">
         <aside
           className={cn(
-            "bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0 transition-all duration-300 ease-in-out",
+            "bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0 transition-all duration-300 ease-in-out absolute sm:relative z-10 h-full sm:h-auto",
             isExplorerOpen ? "w-64" : "w-16"
           )}
         >
@@ -33,7 +37,11 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
             onToggleExpand={() => setIsExplorerOpen(!isExplorerOpen)}
           />
         </aside>
-        <main className="flex-1 flex flex-col bg-background">
+        <main className={cn(
+          "flex-1 flex flex-col bg-background transition-all duration-300 ease-in-out",
+          isMobile && isExplorerOpen ? "ml-64" : "ml-16",
+          "sm:ml-0"
+          )}>
           {children}
         </main>
       </div>
