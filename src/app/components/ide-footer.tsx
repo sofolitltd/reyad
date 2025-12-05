@@ -21,7 +21,7 @@ export function IdeFooter() {
       <div className="flex items-center gap-2 md:gap-4">
         <div className="hidden md:flex items-center gap-1">
           <Server className="w-4 h-4" />
-          <span>Next.js</span>
+          <span>Flutter</span>
         </div>
         <Link
           href="https://wa.me/+8801704340860"
