@@ -1,56 +1,59 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
-import Image from "next/image";
-import Link from "next/link";
-import { Code, GitBranch, User, Feather, Download } from "lucide-react";
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
+import {PlaceHolderImages} from '@/lib/placeholder-images';
+import Image from 'next/image';
+import Link from 'next/link';
 import {
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-  FaYoutube,
-  FaWhatsapp,
-} from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+  Code,
+  GitBranch,
+  User,
+  Feather,
+  Download,
+  Github,
+  Linkedin,
+  Facebook,
+  Youtube,
+  MessageCircle,
+} from 'lucide-react';
+import {Button} from '@/components/ui/button';
 
-const profileImage = PlaceHolderImages.find(
-  (img) => img.id === "profile-picture"
-);
+const profileImage = PlaceHolderImages.find(img => img.id === 'profile-picture');
 
 const socialLinks = [
   {
-    name: "GitHub",
-    href: "https://github.com/sofolitltd",
-    icon: FaGithub,
-    label: "GitHub Profile",
-    color: "text-foreground",
+    name: 'GitHub',
+    href: 'https://github.com/sofolitltd',
+    icon: Github,
+    label: 'GitHub Profile',
+    color: 'text-foreground',
   },
   {
-    name: "LinkedIn",
-    href: "https://linkedin.com/in/asifuzzamanreyad",
-    icon: FaLinkedin,
-    label: "LinkedIn Profile",
-    color: "hover:text-primary",
+    name: 'LinkedIn',
+    href: 'https://linkedin.com/in/asifuzzamanreyad',
+    icon: Linkedin,
+    label: 'LinkedIn Profile',
+    color: 'hover:text-primary',
   },
   {
-    name: "Facebook",
-    href: "https://facebook.com/asifuzzamanreyad",
-    icon: FaFacebook,
-    label: "Facebook Profile",
-    color: "hover:text-primary",
+    name: 'Facebook',
+    href: 'https://facebook.com/asifuzzamanreyad',
+    icon: Facebook,
+    label: 'Facebook Profile',
+    color: 'hover:text-primary',
   },
   {
-    name: "YouTube",
-    href: "https://youtube.com/@sofolitltd",
-    icon: FaYoutube,
-    label: "YouTube Channel",
-    color: "hover:text-red-500",
+    name: 'YouTube',
+    href: 'https://youtube.com/@sofolitltd',
+    icon: Youtube,
+    label: 'YouTube Channel',
+    color: 'hover:text-red-500',
   },
+  // Lucide doesn't have a WhatsApp icon, using MessageCircle as a replacement
   {
-    name: "WhatsApp",
-    href: "https://wa.me/+8801704340860",
-    icon: FaWhatsapp,
-    label: "WhatsApp",
-    color: "hover:text-green-500",
+    name: 'WhatsApp',
+    href: 'https://wa.me/+8801704340860',
+    icon: MessageCircle,
+    label: 'WhatsApp',
+    color: 'hover:text-green-500',
   },
 ];
 
@@ -121,7 +124,7 @@ export function AboutSection() {
               <h3 className="text-2xl font-bold font-headline">Md Asifuzzaman Reyad</h3>
               <p className="text-primary">Flutter Developer</p>
               <div className="flex justify-center gap-2 mt-4">
-                {socialLinks.map((link) => (
+                {socialLinks.map(link => (
                   <Link
                     key={link.name}
                     href={link.href}
@@ -130,16 +133,18 @@ export function AboutSection() {
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
                   >
-                    <link.icon className={`w-5 h-5 text-muted-foreground transition-colors ${link.color}`} />
+                    <link.icon
+                      className={`w-5 h-5 text-muted-foreground transition-colors ${link.color}`}
+                    />
                   </Link>
                 ))}
               </div>
               <div className="mt-6">
                 <Button asChild>
-                    <Link href="/Md%20Asifuzzaman%20Reyad%20-%20dev%2012-25.pdf" download>
+                  <Link href="/Md%20Asifuzzaman%20Reyad%20-%20dev%2012-25.pdf" download>
                     <Download className="mr-2 h-4 w-4" />
                     Download CV
-                    </Link>
+                  </Link>
                 </Button>
               </div>
             </CardContent>
@@ -153,11 +158,14 @@ export function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                I am a passionate and results-driven Flutter developer with a knack for creating beautiful, high-performance cross-platform applications. My journey into mobile development started with a fascination for building things that people can interact with on-the-go.
+                I am a passionate and results-driven Flutter developer with a knack for creating
+                beautiful, high-performance cross-platform applications. My journey into mobile
+                development started with a fascination for building things that people can interact
+                with on-the-go.
               </p>
             </CardContent>
           </Card>
-           <Card>
+          <Card>
             <CardHeader>
               <CardTitle className="font-headline text-xl flex items-center gap-2">
                 <Feather className="w-5 h-5 text-primary" />
@@ -166,7 +174,9 @@ export function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                I believe in clean code, elegant design, and user-centric solutions. For me, developing an app is not just about writing code; it's about crafting an experience that is both intuitive and enjoyable for the end-user.
+                I believe in clean code, elegant design, and user-centric solutions. For me,
+                developing an app is not just about writing code; it's about crafting an experience
+                that is both intuitive and enjoyable for the end-user.
               </p>
             </CardContent>
           </Card>
@@ -174,17 +184,17 @@ export function AboutSection() {
 
         {/* Right Column: Code Snippet */}
         <div className="space-y-8">
-           <Card className="h-full flex flex-col">
-             <CardHeader>
-                <CardTitle className="font-headline text-xl flex items-center gap-2">
-                    <GitBranch className="w-5 h-5 text-primary" />
-                    What I'm Working On
-                </CardTitle>
-             </CardHeader>
+          <Card className="h-full flex flex-col">
+            <CardHeader>
+              <CardTitle className="font-headline text-xl flex items-center gap-2">
+                <GitBranch className="w-5 h-5 text-primary" />
+                What I'm Working On
+              </CardTitle>
+            </CardHeader>
             <CardContent className="flex-grow">
-                 <pre className="language-dart bg-muted/40 rounded-lg p-4 text-sm font-code h-full overflow-x-auto whitespace-pre-wrap">
-                    <code>{codeSnippet}</code>
-                </pre>
+              <pre className="language-dart bg-muted/40 rounded-lg p-4 text-sm font-code h-full overflow-x-auto whitespace-pre-wrap">
+                <code>{codeSnippet}</code>
+              </pre>
             </CardContent>
           </Card>
         </div>
