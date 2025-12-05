@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Sun, Moon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
   return (
@@ -16,11 +15,7 @@ export function SiteHeader() {
       </div>
 
       <div className="flex items-center gap-2">
-        {/* Dark mode toggle placeholder */}
-        <Button variant="ghost" size="icon" className="w-8 h-8">
-            <Sun className="h-5 w-5" />
-            <span className="sr-only">Toggle theme</span>
-        </Button>
+        <ThemeToggle />
       </div>
     </header>
   );

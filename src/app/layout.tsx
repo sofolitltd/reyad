@@ -7,14 +7,29 @@ export const metadata: Metadata = {
   description: "A modern portfolio for a Flutter Developer.",
 };
 
+const NoFlash = () => {
+    const code = `
+(function() {
+  const theme = localStorage.getItem('theme');
+  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+})()
+  `;
+    return <script dangerouslySetInnerHTML={{ __html: code }} />;
+  };
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <NoFlash />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -23,8 +38,8 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
-        <Toaster />
-        <main>{children}</main>
+          <Toaster />
+          <main>{children}</main>
       </body>
     </html>
   );
