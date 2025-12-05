@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { ProjectExplorer } from "./project-explorer";
 import { IdeFooter } from "./ide-footer";
 import { SiteHeader } from "@/components/site-header";
-import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -20,25 +18,12 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
 
   return (
     <div className="flex flex-col h-screen bg-[#2a2d3d]">
-      <SiteHeader>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setIsExplorerOpen(!isExplorerOpen)}
-          className="mr-2"
-        >
-          {isExplorerOpen ? (
-            <PanelLeftClose className="h-5 w-5" />
-          ) : (
-            <PanelLeftOpen className="h-5 w-5" />
-          )}
-        </Button>
-      </SiteHeader>
+      <SiteHeader />
       <div className="flex flex-grow overflow-hidden">
         <aside
           className={cn(
             "bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0 transition-all duration-300 ease-in-out",
-            isExplorerOpen ? "w-64" : "w-14"
+            isExplorerOpen ? "w-64" : "w-16"
           )}
         >
           <ProjectExplorer

@@ -10,6 +10,7 @@ import {
   Mail,
   FolderOpen,
   FolderKanban,
+  PanelLeftClose,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -125,10 +126,17 @@ export function ProjectExplorer({
         )}
       >
         {isExpanded && (
-          <h3 className="text-sm font-bold uppercase text-muted-foreground">
+          <h3 className="text-sm font-bold uppercase text-muted-foreground flex-grow">
             Explorer
           </h3>
         )}
+         <Button variant="ghost" size="icon" onClick={onToggleExpand}>
+            {isExpanded ? (
+                <PanelLeftClose className="w-5 h-5" />
+            ) : (
+                <FolderKanban className="w-6 h-6 text-primary" />
+            )}
+        </Button>
       </div>
       {isExpanded ? (
          <ExplorerNode
@@ -140,10 +148,12 @@ export function ProjectExplorer({
           onToggle={() => {}}
         />
       ) : (
-        <div className="flex flex-col items-center gap-2">
-             <Button variant="ghost" size="icon" onClick={onToggleExpand}>
-                <FolderKanban className="w-6 h-6 text-primary" />
-             </Button>
+        <div className="flex flex-col items-center gap-4 mt-4">
+             {structure.children[0].children.map((file) => (
+                 <Button variant={activeFile === file.id ? "secondary" : "ghost"} size="icon" key={file.id} onClick={() => file.id && onSelectFile(file.id)}>
+                    <file.icon className="w-6 h-6" />
+                 </Button>
+             ))}
         </div>
       )}
     </div>
