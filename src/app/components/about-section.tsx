@@ -108,11 +108,11 @@ export function AboutSection() {
             <CardContent className="p-6">
               {profileImage && (
                 <Image
-                  src="https://reyad.vercel.app/_next/image?url=%2Freyad.png&w=640&q=75"
+                  src="/reyad_pp.png"
                   alt="Developer's Headshot"
                   width={120}
                   height={120}
-                  className="rounded-lg object-cover ring-1 ring-primary mx-auto mb-4"
+                  className="rounded-xl object-cover mx-auto mb-4"
                   data-ai-hint={profileImage.imageHint}
                 />
               )}
