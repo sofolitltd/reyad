@@ -9,7 +9,7 @@
     {
       "id": "project-1-screenshot",
       "description": "Screenshot of Campus Assistant App.",
-      "imageUrl": "https://images.unsplash.com/photo-1762329393085-26274e902fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlZHVjYXRpb24lMjBhcHB8ZW58MHx8fHwxNzY0OTYzMDI5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBhcHB8ZW58MHx8fHwxNzE1MzA0NDg1fDA&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "education app"
     },
     {
@@ -38,9 +38,9 @@
     },
     {
       "id": "project-6-screenshot",
-      "description": "Screenshot of Doctor App project.",
-      "imageUrl": "https://images.unsplash.com/photo-1587400873647-ae5485239fed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb2N0b3IlMjBhcHB8ZW58MHx8fHwxNzY0OTYzMDI5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "doctor app"
+      "description": "Screenshot of Certificate Generator project.",
+      "imageUrl": "https://images.unsplash.com/photo-1593113596772-84cbe6a16d63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N1bWVudCUyMGdlbmVyYXRvcnxlbnwwfHx8fDE3MTUyNDI0ODV8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "certificate generator"
     },
     {
       "id": "blog-1-thumbnail",

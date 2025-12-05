@@ -60,14 +60,14 @@ const projectsData: Project[] = [
   },
   {
     id: "proj-6",
-    title: "Doctor App",
-    description: "A Flutter application for booking doctor appointments, managing patient records, and handling online consultations.",
+    title: "Certificate Generator",
+    description: "A Flutter application for generating and customizing professional certificates from predefined templates.",
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-6-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-6-screenshot")!
       .imageHint,
-    tags: ["Flutter", "Dart", "Firebase", "GetX"],
-    repoLink: "https://github.com/sofolitltd/doctor-app",
+    tags: ["Flutter", "Dart", "PDF", "GetX"],
+    repoLink: "https://github.com/sofolitltd/certificate-generator",
   },
 ];
 
