@@ -12,15 +12,24 @@ import {
   FolderOpen,
   FolderKanban,
   PanelLeftClose,
+  Download,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Separator } from "@/components/ui/separator";
 
 const structure = {
   name: "portfolio",
   type: "folder",
   children: [
+    {
+      name: "public",
+      type: "folder",
+      children: [
+        { name: "download-cv.pdf", type: "file", id: "download-cv", icon: Download },
+      ],
+    },
     {
       name: "lib",
       type: "folder",
@@ -56,6 +65,24 @@ const ExplorerNode = ({
 }) => {
   const [isOpen, setIsOpen] = useState(true);
 
+  const handleNodeClick = () => {
+    if (node.id === 'download-cv') {
+      // This is a special case to trigger a download.
+      // We create a temporary link and click it.
+      const link = document.createElement('a');
+      link.href = '/Md%20Asifuzzaman%20Reyad%20-%20dev%2012-25.pdf';
+      link.download = 'Md Asifuzzaman Reyad - dev 12-25.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (node.id) {
+      onSelectFile(node.id);
+    } else if (node.type === "folder") {
+       setIsOpen(!isOpen);
+    }
+  };
+
+
   if (node.type === "folder") {
     return (
       <div>
@@ -68,7 +95,7 @@ const ExplorerNode = ({
               className={cn("w-4 h-4 mr-1 transition-transform", isOpen && "rotate-90")}
             />
           )}
-          {isOpen ? <FolderOpen className="w-4 h-4 mr-2 text-primary" /> : <Folder className="w-4 h-4 mr-2 text-primary" />}
+          {isOpen ? <FolderOpen className="w-4 h-4 mr-2 text-foreground" /> : <Folder className="w-4 h-4 mr-2 text-foreground" />}
           {isExpanded && <span>{node.name}</span>}
         </div>
         {isOpen && isExpanded && (
@@ -96,9 +123,9 @@ const ExplorerNode = ({
         "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted",
         activeFile === node.id && "bg-muted"
       )}
-      onClick={() => node.id && onSelectFile(node.id)}
+      onClick={handleNodeClick}
     >
-      <Icon className="w-4 h-4 mx-2 text-accent" />
+      <Icon className="w-4 h-4 mx-2 text-muted-foreground" />
       {isExpanded && <span>{node.name}</span>}
     </div>
   );
@@ -116,6 +143,19 @@ export function ProjectExplorer({
   onToggleExpand: () => void;
 }) {
 
+  const handleFileSelect = (fileId: string) => {
+    if (fileId === 'download-cv') {
+       const link = document.createElement('a');
+      link.href = '/Md%20Asifuzzaman%20Reyad%20-%20dev%2012-25.pdf';
+      link.download = 'Md Asifuzzaman Reyad - dev 12-25.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      return;
+    }
+    onSelectFile(fileId);
+  }
+
   return (
     <div>
       <div
@@ -125,7 +165,7 @@ export function ProjectExplorer({
         )}
       >
         {isExpanded && (
-          <h3 className="text-sm font-bold uppercase text-muted-foreground flex-grow">
+          <h3 className="text-sm font-medium uppercase text-muted-foreground flex-grow">
             Explorer
           </h3>
         )}
@@ -137,6 +177,7 @@ export function ProjectExplorer({
             )}
         </Button>
       </div>
+       {isExpanded && <Separator className="mb-2" />}
       {isExpanded ? (
          <ExplorerNode
           node={structure}
@@ -146,7 +187,10 @@ export function ProjectExplorer({
         />
       ) : (
         <div className="flex flex-col items-center gap-4 mt-4">
-             {structure.children[0].children.map((file) => (
+            <Button variant="ghost" size="icon" onClick={() => handleFileSelect('download-cv')}>
+                <Download className="w-6 h-6" />
+            </Button>
+             {structure.children.find(c => c.name === 'lib')?.children?.map((file) => (
                  <Button variant={activeFile === file.id ? "secondary" : "ghost"} size="icon" key={file.id} onClick={() => file.id && onSelectFile(file.id)}>
                     <file.icon className="w-6 h-6" />
                  </Button>

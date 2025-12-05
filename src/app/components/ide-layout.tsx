@@ -35,7 +35,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
         <aside
           className={cn(
             "bg-sidebar text-sidebar-foreground p-2 border-r border-sidebar-border flex-shrink-0 transition-all duration-300 ease-in-out",
-            isExplorerOpen ? "w-60" : "w-16"
+            isExplorerOpen ? "w-56" : "w-16"
           )}
         >
           <ProjectExplorer
