@@ -3,9 +3,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useActionState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { submitContactForm } from "../actions";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,8 +16,17 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Loader2, Mail, Phone, Send } from "lucide-react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -29,26 +36,37 @@ const contactFormSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
-const initialState = {
-  message: "",
-  errors: {},
-};
+const socialLinks = [
+  {
+    name: "GitHub",
+    href: "https://github.com/sofolitltd",
+    icon: FaGithub,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/asifuzzamanreyad",
+    icon: FaLinkedin,
+  },
+  {
+    name: "Facebook",
+    href: "https://facebook.com/asifuzzamanreyad",
+    icon: FaFacebook,
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@sofolitltd",
+    icon: FaYoutube,
+  },
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/+8801704340860",
+    icon: FaWhatsapp,
+  },
+];
 
-function SubmitButton() {
-    // This is a placeholder for a pending state. 
-    // In a real app, you might use useFormStatus from react-dom.
-    const pending = false;
-    return (
-      <Button type="submit" className="w-full" disabled={pending}>
-        {pending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-        Send Message
-      </Button>
-    );
-  }
 
 export function ContactSection() {
   const { toast } = useToast();
-  const [state, formAction] = useActionState(submitContactForm, initialState);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -59,83 +77,134 @@ export function ContactSection() {
     },
   });
 
-  useEffect(() => {
-    if (state.message) {
-      if (state.errors && Object.keys(state.errors).length > 0) {
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description: state.message,
-        });
-      } else {
-        toast({
-          title: "Success!",
-          description: state.message,
-        });
-        form.reset();
-      }
-    }
-  }, [state, toast, form]);
+  const onSubmit = (data: ContactFormValues) => {
+    const { name, email, message } = data;
+    const whatsappMessage = `Hello, I'm ${name} (${email}).\n\nMessage:\n${message}`;
+    const whatsappUrl = `https://wa.me/+8801704340860?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+    
+    // Open WhatsApp link in a new tab
+    window.open(whatsappUrl, "_blank");
+
+    toast({
+      title: "Redirecting to WhatsApp",
+      description: "Please send your message through WhatsApp.",
+    });
+
+    form.reset();
+  };
 
   return (
     <section id="contact" className="scroll-mt-20 pb-8">
-      <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl mb-12 font-headline">
-        Get In Touch
-      </h2>
-      <Card className="max-w-xl mx-auto ">
-        <CardHeader>
-          <CardTitle className="text-center font-headline">Contact Me</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form action={formAction} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your Name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="your.email@example.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Your message..."
-                        className="min-h-[120px]"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <SubmitButton />
-            </form>
-          </Form>
-        </CardContent>
+      <Card className="max-w-4xl mx-auto overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          {/* Left Side: Contact Info */}
+          <div className="p-8 bg-primary text-primary-foreground flex flex-col justify-between">
+            <div>
+              <h2 className="text-2xl font-bold font-headline mb-2">
+                Let's Connect
+              </h2>
+              <p className="text-primary-foreground/80 mb-8">
+                I'm happy to chat about new projects, collaborations, or just
+                say hello!
+              </p>
+              <div className="space-y-4 text-sm">
+                <a
+                  href="mailto:asifreyad1@gmail.com"
+                  className="flex items-center gap-3 hover:text-primary-foreground/80 transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>asifreyad1@gmail.com</span>
+                </a>
+                <a
+                  href="tel:+8801704340860"
+                  className="flex items-center gap-3 hover:text-primary-foreground/80 transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>01704340860</span>
+                </a>
+              </div>
+              <div className="flex gap-3 mt-8">
+                {socialLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    aria-label={link.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full flex items-center justify-center bg-primary-foreground/20 hover:bg-primary-foreground/30 transition-colors"
+                  >
+                    <link.icon className="w-4 h-4 text-primary-foreground" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+             <p className="text-xs text-primary-foreground/60 mt-8">
+              I reply to most messages within 24 hours.
+            </p>
+          </div>
+
+          {/* Right Side: Form */}
+          <div className="p-8">
+             <h2 className="text-2xl font-bold font-headline mb-6">Send a Message</h2>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder="Your Name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          placeholder="Your Email"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Your Message"
+                          className="min-h-[120px]"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                 <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
+                  {form.formState.isSubmitting ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="mr-2 h-4 w-4" />
+                  )}
+                  Send Message
+                </Button>
+              </form>
+            </Form>
+          </div>
+        </div>
       </Card>
     </section>
   );

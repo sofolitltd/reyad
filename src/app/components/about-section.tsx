@@ -114,7 +114,7 @@ export function AboutSection() {
                   alt="Developer's Headshot"
                   width={120}
                   height={120}
-                  className="rounded-lg object-cover ring-4 ring-primary mx-auto mb-4"
+                  className="rounded-lg object-cover ring-1 ring-primary mx-auto mb-4"
                   data-ai-hint={profileImage.imageHint}
                 />
               )}
