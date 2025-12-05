@@ -33,7 +33,7 @@ export function SiteHeader() {
                 strokeWidth="24"
               />
             </svg>
-            <span className="font-bold text-lg">FlutterFlow</span>
+            <span className="font-bold text-lg">Reyad's Portfolio</span>
           </Link>
         </div>
       </div>

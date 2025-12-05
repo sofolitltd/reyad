@@ -4,12 +4,12 @@ import type { Skill } from "@/lib/types";
 import { Code, Database, Smartphone, GitBranch } from "lucide-react";
 
 const skills: Skill[] = [
-  { name: "Flutter", proficiency: 95, icon: Smartphone },
-  { name: "Dart", proficiency: 90, icon: Code },
-  { name: "Firebase", proficiency: 85, icon: Database },
-  { name: "Git", proficiency: 80, icon: GitBranch },
-  { name: "React Native", proficiency: 70, icon: Smartphone },
-  { name: "Bloc/Provider", proficiency: 90, icon: Code },
+  { name: "Kotlin", proficiency: 95, icon: Code },
+  { name: "Jetpack Compose", proficiency: 90, icon: Smartphone },
+  { name: "Android SDK", proficiency: 88, icon: Smartphone },
+  { name: "Git", proficiency: 85, icon: GitBranch },
+  { name: "Room/SQLite", proficiency: 80, icon: Database },
+  { name: "ViewModel/LiveData", proficiency: 90, icon: Code },
   { name: "REST APIs", proficiency: 85, icon: Code },
   { name: "UI/UX Design", proficiency: 75, icon: Smartphone },
 ];

@@ -20,8 +20,8 @@ import {
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "FlutterFlow Portfolio",
-  description: "A modern portfolio for a Flutter App Developer.",
+  title: "Reyad's Portfolio",
+  description: "A modern portfolio for an Android Developer.",
 };
 
 export default function RootLayout({

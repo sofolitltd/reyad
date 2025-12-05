@@ -7,20 +7,24 @@ const profileImage = PlaceHolderImages.find(
 );
 
 const codeSnippet = `
-class Developer {
-  constructor() {
-    this.name = "John Doe";
-    this.role = "Flutter App Developer";
-    this.skills = ["Flutter", "Dart", "Firebase", "React Native"];
-  }
+// MainActivity.kt
+import androidx.activity.compose.setContent
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 
-  sayHello() {
-    return \`Hello, I'm \${this.name} and I build beautiful mobile apps.\`;
-  }
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            Greeting(name = "Reyad")
+        }
+    }
 }
 
-const me = new Developer();
-console.log(me.sayHello());
+@Composable
+fun Greeting(name: String) {
+    Text(text = "Hello, $name! Welcome to my portfolio.")
+}
 `;
 
 export function AboutSection() {
@@ -41,30 +45,29 @@ export function AboutSection() {
                 />
               )}
               <div>
-                <h3 className="text-2xl font-bold font-headline">John Doe</h3>
-                <p className="text-primary">Flutter App Developer</p>
+                <h3 className="text-2xl font-bold font-headline">Reyad</h3>
+                <p className="text-primary">Android Developer</p>
               </div>
             </div>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I am a passionate and results-oriented Flutter developer with a
-                proven track record of creating high-quality, user-centric
-                mobile applications. With a strong foundation in Dart and a deep
-                understanding of the Flutter framework, I specialize in building
-                cross-platform apps that are both beautiful and performant.
+                I am a dedicated and detail-oriented Android developer with a
+                passion for crafting high-quality, user-friendly mobile
+                applications. With a strong command of Kotlin and a deep
+                understanding of the Android SDK and Jetpack Compose, I specialize in
+                building native apps that are both robust and visually appealing.
               </p>
               <p>
-                My journey into mobile development started with a fascination for
-                how technology can solve real-world problems. I've worked on
-                various projects, from small-scale utilities to complex,
-                data-driven applications for enterprise clients. Some of my past work includes a social media app for niche communities (see{' '}
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Project Link</a>) and an e-commerce platform that streamlined the checkout process (repo at{' '}
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GitHub</a>). These experiences have equipped me with a versatile skill set and a problem-solving mindset.
+                My journey into mobile development was sparked by a desire to build
+                tools that make a difference in people's daily lives. I've had the
+                opportunity to work on a variety of projects, from personal utilities to
+                complex, scalable applications for a wide range of users. You can check out some of my work on{' '}
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GitHub</a>.
               </p>
             </div>
           </div>
           <div className="bg-muted/40 p-6 md:p-8 rounded-lg">
-            <pre className="language-javascript bg-background/50 rounded-lg p-4 overflow-x-auto text-sm font-code h-full">
+            <pre className="language-kotlin bg-background/50 rounded-lg p-4 overflow-x-auto text-sm font-code h-full">
               <code>{codeSnippet}</code>
             </pre>
           </div>

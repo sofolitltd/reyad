@@ -5,38 +5,38 @@ import { ProjectCard } from "./project-card";
 const projectsData: Project[] = [
   {
     id: "proj-1",
-    title: "E-Commerce App",
+    title: "Media Player App",
     description:
-      "A feature-rich e-commerce application built with Flutter, featuring a clean UI, state management with Bloc, and Firebase integration for backend services.",
+      "A feature-rich media player for Android built with Jetpack Compose, featuring a modern UI, state management with ViewModel, and ExoPlayer for playback.",
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-1-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-1-screenshot")!
       .imageHint,
-    tags: ["Flutter", "Firebase", "Bloc"],
-    repoLink: "https://github.com/example/ecommerce-app",
+    tags: ["Kotlin", "Jetpack Compose", "ExoPlayer"],
+    repoLink: "https://github.com/example/media-player-app",
     liveLink: "#",
   },
   {
     id: "proj-2",
-    title: "Social Media Platform",
+    title: "Task Management App",
     description: "", // Empty description to demo AI summary
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-2-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-2-screenshot")!
       .imageHint,
-    tags: ["Flutter", "Dart", "Node.js", "MongoDB"],
-    repoLink: "https://github.com/example/social-media-app",
+    tags: ["Kotlin", "Compose", "Room", "Hilt"],
+    repoLink: "https://github.com/example/task-management-app",
   },
   {
     id: "proj-3",
-    title: "Fitness Tracker",
+    title: "Recipe Finder",
     description:
-      "A mobile app to track workouts, set fitness goals, and visualize progress with charts. Built using Flutter and Provider for state management.",
+      "A mobile app to discover and save recipes, built with Jetpack Compose and leveraging the Ktor client for networking and Coil for image loading.",
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-3-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-3-screenshot")!
       .imageHint,
-    tags: ["Flutter", "Provider", "SQLite"],
+    tags: ["Kotlin", "Jetpack Compose", "Ktor", "Coil"],
     liveLink: "#",
   },
 ];

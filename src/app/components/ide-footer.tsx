@@ -20,11 +20,11 @@ export function IdeFooter() {
         </div>
         <div className="flex items-center gap-1">
           <User className="w-4 h-4" />
-          <span>John Doe</span>
+          <span>Reyad</span>
         </div>
         <div className="flex items-center gap-1">
           <Code className="w-4 h-4" />
-          <span>Flutter Developer</span>
+          <span>Android Developer</span>
         </div>
       </div>
       <div className="flex items-center gap-4">

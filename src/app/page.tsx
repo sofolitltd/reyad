@@ -11,9 +11,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { File, Code, Briefcase, Rss, Mail } from "lucide-react";
 
 const sections = [
-  { id: "about", label: "about.md", icon: File, component: <AboutSection /> },
-  { id: "skills", label: "skills.ts", icon: Code, component: <SkillsSection /> },
-  { id: "portfolio", label: "portfolio.json", icon: Briefcase, component: <PortfolioSection /> },
+  { id: "about", label: "about.kt", icon: File, component: <AboutSection /> },
+  { id: "skills", label: "skills.gradle.kts", icon: Code, component: <SkillsSection /> },
+  { id: "portfolio", label: "projects.xml", icon: Briefcase, component: <PortfolioSection /> },
   { id: "blog", label: "posts.rss", icon: Rss, component: <BlogSection /> },
   { id: "contact", label: "contact.html", icon: Mail, component: <ContactSection /> },
 ];
