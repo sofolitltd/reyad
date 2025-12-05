@@ -24,13 +24,6 @@ const structure = {
   type: "folder",
   children: [
     {
-      name: "public",
-      type: "folder",
-      children: [
-        { name: "download-cv.pdf", type: "file", id: "download-cv", icon: Download },
-      ],
-    },
-    {
       name: "lib",
       type: "folder",
       children: [
@@ -39,6 +32,13 @@ const structure = {
         { name: "projects.dart", type: "file", id: "portfolio", icon: Briefcase },
         { name: "blog.dart", type: "file", id: "blog", icon: Rss },
         { name: "contact.dart", type: "file", id: "contact", icon: Mail },
+      ],
+    },
+    {
+      name: "public",
+      type: "folder",
+      children: [
+        { name: "cv.pdf", type: "file", id: "download-cv", icon: Download },
       ],
     },
   ],
