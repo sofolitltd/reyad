@@ -167,7 +167,7 @@ export function AboutSection() {
                 </CardTitle>
              </CardHeader>
             <CardContent className="flex-grow">
-                 <pre className="language-dart bg-muted/40 rounded-lg p-4 text-sm font-code h-full overflow-x-hidden whitespace-pre-wrap">
+                 <pre className="language-dart bg-muted/40 rounded-lg p-4 text-sm font-code h-full overflow-x-auto whitespace-pre-wrap">
                     <code>{codeSnippet}</code>
                 </pre>
             </CardContent>

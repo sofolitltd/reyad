@@ -55,44 +55,44 @@ export default function Home() {
 
   return (
     <IdeLayout onSelectFile={handleSelectFile} activeFile={activeTab}>
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col h-full">
-          <TabsList className="bg-[#2a2d3d] border-b border-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
-            {openTabs.map((section) => (
-              <TabsTrigger
-                key={section.id}
-                value={section.id}
-                className="h-full rounded-none px-3 pr-2 text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground border-r border-transparent data-[state=active]:border-border flex-shrink-0 group"
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col h-full">
+        <TabsList className="bg-[#2a2d3d] border-b border-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
+          {openTabs.map((section) => (
+            <TabsTrigger
+              key={section.id}
+              value={section.id}
+              className="h-full rounded-none px-3 pr-2 text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground border-r border-transparent data-[state=active]:border-border flex-shrink-0 group"
+            >
+              <section.icon className="w-4 h-4 mr-2" />
+              <span className="mr-2">{section.label}</span>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-5 w-5 rounded-sm invisible group-hover:visible data-[state=active]:group-hover:visible"
+                onClick={(e) => handleCloseTab(e, section.id)}
               >
-                <section.icon className="w-4 h-4 mr-2" />
-                <span className="mr-2">{section.label}</span>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-5 w-5 rounded-sm invisible group-hover:visible data-[state=active]:group-hover:visible"
-                  onClick={(e) => handleCloseTab(e, section.id)}
-                >
-                    <X className="w-3 h-3" />
-                </Button>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-            
-          <div className="bg-background flex-1 overflow-y-auto">
-            {openTabs.length > 0 ? (
-                 allSections.map((section) => (
-                    <TabsContent key={section.id} value={section.id} className="mt-0 h-full">
-                      <div className="container mx-auto px-4 py-8 md:py-12 h-full">
-                        {section.component}
-                      </div>
-                    </TabsContent>
-                  ))
-            ) : (
-                <div className="flex h-full items-center justify-center text-muted-foreground">
-                    <p>Select a file to view</p>
-                </div>
-            )}
-          </div>
-        </Tabs>
-      </IdeLayout>
+                  <X className="w-3 h-3" />
+              </Button>
+            </TabsTrigger>
+          ))}
+        </TabsList>
+          
+        <div className="bg-background flex-1 overflow-y-auto">
+          {openTabs.length > 0 ? (
+               allSections.map((section) => (
+                  <TabsContent key={section.id} value={section.id} className="mt-0 h-full">
+                    <div className="container mx-auto px-4 py-8 md:py-12 h-full">
+                      {section.component}
+                    </div>
+                  </TabsContent>
+                ))
+          ) : (
+              <div className="flex h-full items-center justify-center text-muted-foreground">
+                  <p>Select a file to view</p>
+              </div>
+          )}
+        </div>
+      </Tabs>
+    </IdeLayout>
   );
 }
