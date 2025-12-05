@@ -174,11 +174,11 @@ export function ProjectExplorer({
             Explorer
           </h3>
         )}
-         <Button variant="ghost" size="icon" onClick={onToggleExpand}>
+         <Button variant="ghost" size="icon" className="h-8 w-8" onClick={onToggleExpand}>
             {isExpanded ? (
-                <PanelLeftClose className="w-5 h-5" />
+                <PanelLeftClose className="w-4 h-4" />
             ) : (
-                <FolderKanban className="w-6 h-6 text-primary" />
+                <FolderKanban className="w-5 h-5 text-primary" />
             )}
         </Button>
       </div>
