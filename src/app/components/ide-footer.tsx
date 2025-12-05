@@ -1,3 +1,4 @@
+"use client";
 import { GitBranch, User, Code, Server, CheckCircle, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -19,12 +20,11 @@ export function IdeFooter() {
           <span>main</span>
         </div>
         <div className="flex items-center gap-1">
-          <User className="w-4 h-4" />
-          <span>Reyad</span>
-        </div>
-        <div className="flex items-center gap-1">
           <Code className="w-4 h-4" />
-          <span>Flutter Developer</span>
+          <span>Ln 1, Col 1</span>
+        </div>
+         <div className="flex items-center gap-1">
+          <span>UTF-8</span>
         </div>
       </div>
       <div className="flex items-center gap-4">

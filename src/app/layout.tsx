@@ -1,25 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { SidebarProvider, Sidebar, SidebarInset } from "@/components/ui/sidebar";
-import MainNav from "@/components/main-nav";
-import { SiteHeader } from "@/components/site-header";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Feather
-} from "lucide-react";
-import {
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
-  SidebarRail,
-} from "@/components/ui/sidebar";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Reyad's Portfolio",
@@ -43,65 +24,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <Toaster />
-        <SidebarProvider>
-          <div className="flex min-h-screen">
-            <Sidebar
-              className="border-r hidden md:flex flex-col"
-              collapsible="icon"
-            >
-              <SidebarRail />
-              <SidebarHeader className="p-2 justify-center">
-                <Link href="/" className="flex items-center gap-2">
-                   <Feather className="h-8 w-8 text-primary"/>
-                </Link>
-              </SidebarHeader>
-              <SidebarContent className="p-2">
-                <MainNav />
-              </SidebarContent>
-              <SidebarFooter className="p-2">
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton
-                      asChild
-                      className="justify-center"
-                      tooltip="GitHub"
-                    >
-                      <Link href="#">
-                        <Github />
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton
-                      asChild
-                      className="justify-center"
-                      tooltip="LinkedIn"
-                    >
-                      <Link href="#">
-                        <Linkedin />
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton
-                      asChild
-                      className="justify-center"
-                      tooltip="Twitter"
-                    >
-                      <Link href="#">
-                        <Twitter />
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-              </SidebarFooter>
-            </Sidebar>
-            <SidebarInset className="flex-1 flex flex-col">
-              <SiteHeader />
-              <main className="flex-grow">{children}</main>
-            </SidebarInset>
-          </div>
-        </SidebarProvider>
+        <main>{children}</main>
       </body>
     </html>
   );
