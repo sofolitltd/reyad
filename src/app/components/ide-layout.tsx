@@ -1,10 +1,11 @@
 
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ProjectExplorer } from "./project-explorer";
 import { IdeFooter } from "./ide-footer";
 import { SiteHeader } from "@/components/site-header";
 import { cn } from "@/lib/utils";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 interface IdeLayoutProps {
   children: React.ReactNode;
@@ -13,7 +14,13 @@ interface IdeLayoutProps {
 }
 
 export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps) {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   const [isExplorerOpen, setIsExplorerOpen] = useState(true);
+
+  useEffect(() => {
+    setIsExplorerOpen(isDesktop);
+  }, [isDesktop]);
+
 
   return (
     <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
