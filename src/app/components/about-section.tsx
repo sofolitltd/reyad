@@ -120,7 +120,7 @@ export function AboutSection() {
                 </Link>
               </div>
               <div className="mt-6">
-                <Button asChild className="w-full">
+                <Button asChild>
                     <Link href="/reyad-cv.pdf" download>
                     <Download className="mr-2 h-4 w-4" />
                     Download CV
