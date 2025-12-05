@@ -19,7 +19,8 @@ const projectsData: Project[] = [
   {
     id: "proj-2",
     title: "Fitness Tracker App",
-    description: "", // Empty description to demo AI summary
+    description:
+      "A comprehensive fitness tracking application to monitor workouts and progress, built with Flutter and GetX for state management.",
     imageUrl: PlaceHolderImages.find((img) => img.id === "project-2-screenshot")!
       .imageUrl,
     imageHint: PlaceHolderImages.find((img) => img.id === "project-2-screenshot")!
