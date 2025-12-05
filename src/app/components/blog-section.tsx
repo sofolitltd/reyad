@@ -19,7 +19,7 @@ export function BlogSection() {
       </h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <Link href={`/blog/${post.id}`} key={post.id}>
+          <Link href={`/blog/${post.slug}`} key={post.id}>
             <Card className="flex flex-col h-full overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
               <CardHeader className="p-0">
                 <div className="aspect-video relative">

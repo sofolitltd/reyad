@@ -4,15 +4,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { posts } from '@/lib/blog-posts';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Home } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { SiteHeader } from '@/components/site-header';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 export default function BlogPostPage() {
   const params = useParams();
-  const { id } = params;
+  const { slug } = params;
 
-  const post = posts.find((p) => p.id === id);
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     return (
@@ -57,17 +65,31 @@ export default function BlogPostPage() {
             <div className="max-w-3xl mx-auto">
               <Card>
                 <CardContent className="p-6 md:p-8">
-                  <div className="mb-6">
-                    <Button
-                      variant="ghost"
-                      className="mb-4"
-                      asChild
-                    >
-                      <Link href="/#blog">
-                        <ArrowLeft className="mr-2 h-4 w-4" />
-                        Back to all posts
-                      </Link>
-                    </Button>
+                  <Breadcrumb className="mb-6">
+                    <BreadcrumbList>
+                      <BreadcrumbItem>
+                        <BreadcrumbLink asChild>
+                           <Link href="/" className="flex items-center gap-2">
+                            <Home className="w-4 h-4" /> Home
+                          </Link>
+                        </BreadcrumbLink>
+                      </BreadcrumbItem>
+                      <BreadcrumbSeparator>
+                        <ChevronRight className="w-4 h-4" />
+                      </BreadcrumbSeparator>
+                      <BreadcrumbItem>
+                        <BreadcrumbLink href="/#blog">Blog</BreadcrumbLink>
+                      </BreadcrumbItem>
+                       <BreadcrumbSeparator>
+                        <ChevronRight className="w-4 h-4" />
+                      </BreadcrumbSeparator>
+                      <BreadcrumbItem>
+                        <BreadcrumbPage className="max-w-40 truncate">{post.title}</BreadcrumbPage>
+                      </BreadcrumbItem>
+                    </BreadcrumbList>
+                  </Breadcrumb>
+                
+                  <div className="mb-6 mt-8">
                     <h1 className="text-3xl md:text-4xl font-bold font-headline mb-4">
                       {post.title}
                     </h1>
@@ -86,6 +108,17 @@ export default function BlogPostPage() {
                       Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet.
                     </p>
                   </div>
+
+                   <Button
+                      variant="ghost"
+                      className="mt-8"
+                      asChild
+                    >
+                      <Link href="/#blog">
+                        <ArrowLeft className="mr-2 h-4 w-4" />
+                        Back to all posts
+                      </Link>
+                    </Button>
                 </CardContent>
               </Card>
             </div>

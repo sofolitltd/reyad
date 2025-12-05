@@ -4,6 +4,7 @@ import type { Post } from "@/lib/types";
 export const posts: Post[] = [
   {
     id: "blog-1",
+    slug: "advanced-state-management-in-flutter-with-riverpod",
     title: "Advanced State Management in Flutter with Riverpod",
     description:
       "A comprehensive guide to leveraging Riverpod for scalable and maintainable state management in your Flutter applications.",
@@ -16,6 +17,7 @@ export const posts: Post[] = [
   },
   {
     id: "blog-2",
+    slug: "creating-custom-animations-with-flutter",
     title: "Creating Custom Animations with Flutter's AnimationController",
     description:
       "Unlock the power of custom animations in Flutter. Learn how to use AnimationController and Tweens to bring your UI to life.",
@@ -28,6 +30,7 @@ export const posts: Post[] = [
   },
   {
     id: "blog-3",
+    slug: "integrating-firebase-into-your-flutter-app",
     title: "Integrating Firebase into Your Flutter App",
     description:
       "Step-by-step tutorial on adding Firebase for backend services like Authentication, Firestore, and Cloud Functions to your Flutter project.",

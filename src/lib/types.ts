@@ -19,6 +19,7 @@ export type Skill = {
 
 export type Post = {
   id: string;
+  slug: string;
   title: string;
   description: string;
   imageUrl: string;
