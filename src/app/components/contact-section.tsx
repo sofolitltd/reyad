@@ -16,17 +16,14 @@ import {
 import {Input} from '@/components/ui/input';
 import {Textarea} from '@/components/ui/textarea';
 import {Card, CardContent} from '@/components/ui/card';
+import {Loader2, Mail, Phone, Send} from 'lucide-react';
 import {
-  Loader2,
-  Mail,
-  Phone,
-  Send,
-  Github,
-  Linkedin,
-  Facebook,
-  Youtube,
-  MessageCircle,
-} from 'lucide-react';
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+  FaYoutube,
+  FaWhatsapp,
+} from 'react-icons/fa';
 
 import Link from 'next/link';
 
@@ -42,28 +39,27 @@ const socialLinks = [
   {
     name: 'GitHub',
     href: 'https://github.com/sofolitltd',
-    icon: Github,
+    icon: FaGithub,
   },
   {
     name: 'LinkedIn',
     href: 'https://linkedin.com/in/asifuzzamanreyad',
-    icon: Linkedin,
+    icon: FaLinkedin,
   },
   {
     name: 'Facebook',
     href: 'https://facebook.com/asifuzzamanreyad',
-    icon: Facebook,
+    icon: FaFacebook,
   },
   {
     name: 'YouTube',
     href: 'https://youtube.com/@sofolitltd',
-    icon: Youtube,
+    icon: FaYoutube,
   },
-  // Lucide doesn't have a WhatsApp icon, using MessageCircle as a replacement
   {
     name: 'WhatsApp',
     href: 'https://wa.me/+8801704340860',
-    icon: MessageCircle,
+    icon: FaWhatsapp,
   },
 ];
 
