@@ -2,12 +2,57 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
-import { Code, GitBranch, Facebook, Linkedin, Youtube, User, Feather, Download, Github, Mail, MessageSquare } from "lucide-react";
+import { Code, GitBranch, User, Feather, Download } from "lucide-react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 const profileImage = PlaceHolderImages.find(
   (img) => img.id === "profile-picture"
 );
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    href: "https://github.com/sofolitltd",
+    icon: FaGithub,
+    label: "GitHub Profile",
+    color: "text-foreground",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/asifuzzamanreyad",
+    icon: FaLinkedin,
+    label: "LinkedIn Profile",
+    color: "text-sky-700",
+  },
+  {
+    name: "Facebook",
+    href: "https://facebook.com/asifuzzamanreyad",
+    icon: FaFacebook,
+    label: "Facebook Profile",
+    color: "text-blue-600",
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@sofolitltd",
+    icon: FaYoutube,
+    label: "YouTube Channel",
+    color: "text-red-600",
+  },
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/+8801704340860",
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    color: "text-green-500",
+  },
+];
 
 const codeSnippet = `
 // lib/widgets/profile_card.dart
@@ -76,48 +121,18 @@ export function AboutSection() {
               <h3 className="text-2xl font-bold font-headline">Md Asifuzzaman Reyad</h3>
               <p className="text-primary">Flutter Developer</p>
               <div className="flex justify-center gap-2 mt-4">
-                <Link
-                  href="#"
-                  aria-label="Facebook Profile"
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
-                >
-                  <Facebook className="w-5 h-5 text-blue-600" />
-                </Link>
-                <Link
-                  href="#"
-                  aria-label="LinkedIn Profile"
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
-                >
-                  <Linkedin className="w-5 h-5 text-sky-700" />
-                </Link>
-                <Link
-                  href="#"
-                  aria-label="YouTube Channel"
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
-                >
-                  <Youtube className="w-5 h-5 text-red-600" />
-                </Link>
-                 <Link
-                  href="#"
-                  aria-label="GitHub Profile"
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
-                >
-                  <Github className="w-5 h-5" />
-                </Link>
-                 <Link
-                  href="#"
-                  aria-label="Send an Email"
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
-                >
-                  <Mail className="w-5 h-5 text-gray-400" />
-                </Link>
-                 <Link
-                  href="#"
-                  aria-label="WhatsApp"
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
-                >
-                  <MessageSquare className="w-5 h-5 text-green-500" />
-                </Link>
+                {socialLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    aria-label={link.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
+                  >
+                    <link.icon className={`w-5 h-5 ${link.color}`} />
+                  </Link>
+                ))}
               </div>
               <div className="mt-6">
                 <Button asChild>

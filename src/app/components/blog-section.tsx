@@ -17,7 +17,7 @@ export function BlogSection() {
       <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl mb-12 font-headline">
         From the Blog
       </h2>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
         {posts.map((post) => (
           <Link href={`/blog/${post.slug}`} key={post.id}>
             <Card className="flex flex-col h-full overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
