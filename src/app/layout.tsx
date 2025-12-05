@@ -17,6 +17,7 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  SidebarRail,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
               className="border-r hidden md:flex flex-col"
               collapsible="icon"
             >
+              <SidebarRail />
               <SidebarHeader className="p-2 justify-center">
                 <Link href="/" className="flex items-center gap-2">
                    <Feather className="h-8 w-8 text-primary"/>

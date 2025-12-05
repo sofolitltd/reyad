@@ -11,11 +11,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { File, Code, Briefcase, Rss, Mail } from "lucide-react";
 
 const sections = [
-  { id: "about", label: "about.kt", icon: File, component: <AboutSection /> },
-  { id: "skills", label: "skills.gradle.kts", icon: Code, component: <SkillsSection /> },
-  { id: "portfolio", label: "projects.xml", icon: Briefcase, component: <PortfolioSection /> },
-  { id: "blog", label: "posts.rss", icon: Rss, component: <BlogSection /> },
-  { id: "contact", label: "contact.html", icon: Mail, component: <ContactSection /> },
+  { id: "about", label: "about.dart", icon: File, component: <AboutSection /> },
+  { id: "skills", label: "skills.dart", icon: Code, component: <SkillsSection /> },
+  { id: "portfolio", label: "projects.dart", icon: Briefcase, component: <PortfolioSection /> },
+  { id: "blog", label: "blog.dart", icon: Rss, component: <BlogSection /> },
+  { id: "contact", label: "contact.dart", icon: Mail, component: <ContactSection /> },
 ];
 
 export default function Home() {
@@ -30,6 +30,7 @@ export default function Home() {
               key={section.id}
               value={section.id}
               className="h-full rounded-none px-4 text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground border-r border-transparent data-[state=active]:border-border"
+              onClick={() => document.getElementById(section.id)?.scrollIntoView()}
             >
               <section.icon className="w-4 h-4 mr-2" />
               {section.label}
