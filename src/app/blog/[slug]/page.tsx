@@ -61,7 +61,7 @@ export default function BlogPostPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
           </header>
 
-          <div className="container mt-16 md:mt-24 pb-16">
+          <div className="container pb-16">
             <div className="max-w-3xl mx-auto">
               <Card>
                 <CardContent className="p-6 md:p-8">
@@ -79,7 +79,9 @@ export default function BlogPostPage() {
                           <ChevronRight className="w-4 h-4" />
                         </BreadcrumbSeparator>
                         <BreadcrumbItem>
-                          <BreadcrumbLink href="/#blog">Blog</BreadcrumbLink>
+                          <BreadcrumbLink href="/#blog" asChild>
+                            <a href="/#blog">Blog</a>
+                          </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator>
                           <ChevronRight className="w-4 h-4" />
@@ -113,10 +115,10 @@ export default function BlogPostPage() {
                       className="mt-8"
                       asChild
                     >
-                      <Link href="/#blog">
+                      <a href="/#blog">
                         <ArrowLeft className="mr-2 h-4 w-4" />
                         Back to all posts
-                      </Link>
+                      </a>
                     </Button>
                 </CardContent>
               </Card>
