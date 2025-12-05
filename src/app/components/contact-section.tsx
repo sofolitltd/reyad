@@ -11,7 +11,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from '@/components/ui/form';
 import {Input} from '@/components/ui/input';
@@ -30,7 +29,6 @@ import {
 } from 'lucide-react';
 
 import Link from 'next/link';
-import {cn} from '@/lib/utils';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, {message: 'Name must be at least 2 characters.'}),
@@ -113,16 +111,16 @@ export function ContactSection() {
               <div className="space-y-4 text-sm">
                 <a
                   href="mailto:asifreyad1@gmail.com"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <Mail className="w-5 h-5 text-primary" />
+                  <Mail className="w-4 h-4 text-primary" />
                   <span>asifreyad1@gmail.com</span>
                 </a>
                 <a
                   href="tel:+8801704340860"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <Phone className="w-5 h-5 text-primary" />
+                  <Phone className="w-4 h-4 text-primary" />
                   <span>01704340860</span>
                 </a>
               </div>

@@ -3,7 +3,7 @@ import {PlaceHolderImages} from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  Code,
+  
   GitBranch,
   User,
   Feather,
@@ -24,28 +24,24 @@ const socialLinks = [
     href: 'https://github.com/sofolitltd',
     icon: Github,
     label: 'GitHub Profile',
-    color: 'text-foreground',
   },
   {
     name: 'LinkedIn',
     href: 'https://linkedin.com/in/asifuzzamanreyad',
     icon: Linkedin,
     label: 'LinkedIn Profile',
-    color: 'hover:text-primary',
   },
   {
     name: 'Facebook',
     href: 'https://facebook.com/asifuzzamanreyad',
     icon: Facebook,
     label: 'Facebook Profile',
-    color: 'hover:text-primary',
   },
   {
     name: 'YouTube',
     href: 'https://youtube.com/@sofolitltd',
     icon: Youtube,
     label: 'YouTube Channel',
-    color: 'hover:text-red-500',
   },
   // Lucide doesn't have a WhatsApp icon, using MessageCircle as a replacement
   {
@@ -53,7 +49,6 @@ const socialLinks = [
     href: 'https://wa.me/+8801704340860',
     icon: MessageCircle,
     label: 'WhatsApp',
-    color: 'hover:text-green-500',
   },
 ];
 
@@ -131,10 +126,10 @@ export function AboutSection() {
                     aria-label={link.label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
+                    className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-primary/20 transition-colors group"
                   >
                     <link.icon
-                      className={`w-5 h-5 text-muted-foreground transition-colors ${link.color}`}
+                      className="w-5 h-5 text-muted-foreground transition-colors group-hover:text-primary"
                     />
                   </Link>
                 ))}
