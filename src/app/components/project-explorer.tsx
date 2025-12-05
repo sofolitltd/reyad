@@ -86,7 +86,7 @@ const ExplorerNode = ({
 
   if (node.type === "folder") {
     return (
-      <div>
+      <div className="mb-2">
         <div
           className="flex items-center cursor-pointer p-1 rounded-md hover:bg-primary/20"
           onClick={() => setIsOpen(!isOpen)}
@@ -194,12 +194,10 @@ export function ProjectExplorer({
           <div className="flex flex-col items-center gap-4 mt-4">
               {allFiles.map((file) => (
                   <Button 
-                      variant={"ghost"} 
-                      size="icon" 
                       key={file.id} 
                       onClick={() => file.id && handleFileSelect(file.id)}
                       aria-label={file.name}
-                      className={cn(activeFile === file.id && "bg-background")}
+                      className={cn("h-10 w-10 rounded-md", activeFile === file.id ? "bg-background" : "bg-transparent hover:bg-muted")}
                       >
                       <file.icon className={cn("w-6 h-6 hover:text-current", file.color)} />
                   </Button>
