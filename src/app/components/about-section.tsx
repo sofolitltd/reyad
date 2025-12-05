@@ -64,7 +64,7 @@ export function AboutSection() {
             <CardContent className="p-6">
               {profileImage && (
                 <Image
-                  src="https://reyad.vercel.app/reyad.png"
+                  src="https://reyad.vercel.app/_next/image?url=%2Freyad.png&w=640&q=75"
                   alt="Developer's Headshot"
                   width={120}
                   height={120}
@@ -74,15 +74,27 @@ export function AboutSection() {
               )}
               <h3 className="text-2xl font-bold font-headline">Md Asifuzzaman Reyad</h3>
               <p className="text-primary">Flutter Developer</p>
-              <div className="flex justify-center gap-4 mt-4">
-                <Link href="#" aria-label="Facebook Profile">
-                  <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+              <div className="flex justify-center gap-2 mt-4">
+                <Link
+                  href="#"
+                  aria-label="Facebook Profile"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
+                >
+                  <Facebook className="w-5 h-5 text-blue-600" />
                 </Link>
-                <Link href="#" aria-label="LinkedIn Profile">
-                  <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+                <Link
+                  href="#"
+                  aria-label="LinkedIn Profile"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
+                >
+                  <Linkedin className="w-5 h-5 text-sky-700" />
                 </Link>
-                <Link href="#" aria-label="YouTube Channel">
-                  <Youtube className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+                <Link
+                  href="#"
+                  aria-label="YouTube Channel"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
+                >
+                  <Youtube className="w-5 h-5 text-red-600" />
                 </Link>
               </div>
             </CardContent>
