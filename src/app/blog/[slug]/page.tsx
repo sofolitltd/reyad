@@ -61,7 +61,7 @@ export default function BlogPostPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
           </header>
 
-          <div className="container mt-16 md:-mt-24 pb-16">
+          <div className="container mt-16 md:mt-24 pb-16">
             <div className="max-w-3xl mx-auto">
               <Card>
                 <CardContent className="p-6 md:p-8">
