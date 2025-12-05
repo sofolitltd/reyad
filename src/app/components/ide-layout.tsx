@@ -30,11 +30,12 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
   return (
     <div className="flex flex-col h-screen bg-[#2a2d3d]">
       <SiteHeader />
-      <div className="flex flex-grow overflow-hidden pt-12">
+      <div className="flex-grow pt-12 relative">
         <aside
           className={cn(
-            "bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0 transition-all duration-300 ease-in-out z-10 h-full",
-            "sm:relative",
+            "bg-[#2a2d3d] text-white p-2 border-r border-border transition-all duration-300 ease-in-out h-full z-10",
+            "md:relative md:flex-shrink-0",
+            "absolute", // Mobile: absolute positioning
             isExplorerOpen ? "w-64" : "w-16"
           )}
         >
@@ -45,7 +46,13 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
             onToggleExpand={() => setIsExplorerOpen(!isExplorerOpen)}
           />
         </aside>
-        <main className="flex-1 flex flex-col bg-background">
+        <main
+          className={cn(
+            "flex-1 flex flex-col bg-background h-full transition-all duration-300 ease-in-out",
+             "md:ml-0", // Desktop: no margin when sidebar state changes
+             isExplorerOpen ? 'ml-16 md:ml-0' : 'ml-16' // Mobile: always have margin for the collapsed sidebar
+          )}
+        >
           {children}
         </main>
       </div>
