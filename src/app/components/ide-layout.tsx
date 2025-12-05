@@ -21,6 +21,12 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
     setIsExplorerOpen(isDesktop);
   }, [isDesktop]);
 
+  const handleToggleExpand = () => {
+    if (isDesktop) {
+      setIsExplorerOpen(!isExplorerOpen);
+    }
+    // On mobile, do nothing to prevent expansion.
+  };
 
   return (
     <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
@@ -36,7 +42,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
             onSelectFile={onSelectFile}
             activeFile={activeFile}
             isExpanded={isExplorerOpen}
-            onToggleExpand={() => setIsExplorerOpen(!isExplorerOpen)}
+            onToggleExpand={handleToggleExpand}
           />
         </aside>
         
