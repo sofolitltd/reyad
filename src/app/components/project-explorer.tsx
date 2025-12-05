@@ -201,7 +201,7 @@ export function ProjectExplorer({
                     onClick={() => file.id && handleFileSelect(file.id)}
                     aria-label={file.name}
                     >
-                    <file.icon className={cn("w-6 h-6", file.color)} />
+                    <file.icon className={cn("w-6 h-6 hover:text-current", file.color)} />
                  </Button>
              ))}
         </div>
