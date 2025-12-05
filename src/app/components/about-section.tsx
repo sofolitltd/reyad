@@ -136,7 +136,7 @@ export function AboutSection() {
               </div>
               <div className="mt-6">
                 <Button asChild>
-                    <Link href="/reyad-cv.pdf" download>
+                    <Link href="/Md%20Asifuzzaman%20Reyad%20-%20dev%2012-25.pdf" download>
                     <Download className="mr-2 h-4 w-4" />
                     Download CV
                     </Link>
