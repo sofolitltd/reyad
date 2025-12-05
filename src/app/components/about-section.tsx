@@ -158,7 +158,7 @@ export function AboutSection() {
         </div>
 
         {/* Right Column: Code Snippet */}
-        <div>
+        <div className="space-y-8">
            <Card className="h-full flex flex-col">
              <CardHeader>
                 <CardTitle className="font-headline text-xl flex items-center gap-2">
