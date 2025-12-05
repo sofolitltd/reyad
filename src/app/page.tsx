@@ -29,12 +29,12 @@ export default function Home() {
   return (
     <IdeLayout onSelectFile={handleSelectFile} activeFile={activeTab}>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col flex-grow h-full">
-          <TabsList className="bg-[#2a2d3d] border-b border-border justify-start rounded-none p-0 h-10">
+          <TabsList className="bg-[#2a2d3d] border-b border-border justify-start rounded-none p-0 h-10 overflow-x-auto">
             {sections.map((section) => (
               <TabsTrigger
                 key={section.id}
                 value={section.id}
-                className="h-full rounded-none px-4 text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground border-r border-transparent data-[state=active]:border-border"
+                className="h-full rounded-none px-4 text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground border-r border-transparent data-[state=active]:border-border flex-shrink-0"
               >
                 <section.icon className="w-4 h-4 mr-2" />
                 {section.label}
