@@ -65,31 +65,30 @@ export default function BlogPostPage() {
             <div className="max-w-3xl mx-auto">
               <Card>
                 <CardContent className="p-6 md:p-8">
-                  <Breadcrumb className="mb-8">
-                    <BreadcrumbList>
-                      <BreadcrumbItem>
-                        <BreadcrumbLink asChild>
-                           <Link href="/" className="flex items-center gap-2">
-                            <Home className="w-4 h-4" /> Home
-                          </Link>
-                        </BreadcrumbLink>
-                      </BreadcrumbItem>
-                      <BreadcrumbSeparator>
-                        <ChevronRight className="w-4 h-4" />
-                      </BreadcrumbSeparator>
-                      <BreadcrumbItem>
-                        <BreadcrumbLink href="/#blog">Blog</BreadcrumbLink>
-                      </BreadcrumbItem>
-                       <BreadcrumbSeparator>
-                        <ChevronRight className="w-4 h-4" />
-                      </BreadcrumbSeparator>
-                      <BreadcrumbItem>
-                        <BreadcrumbPage className="max-w-40 truncate">{post.title}</BreadcrumbPage>
-                      </BreadcrumbItem>
-                    </BreadcrumbList>
-                  </Breadcrumb>
-                
                   <div className="mb-6">
+                    <Breadcrumb className="mb-4">
+                      <BreadcrumbList>
+                        <BreadcrumbItem>
+                          <BreadcrumbLink asChild>
+                            <Link href="/" className="flex items-center gap-2">
+                              <Home className="w-4 h-4" /> Home
+                            </Link>
+                          </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator>
+                          <ChevronRight className="w-4 h-4" />
+                        </BreadcrumbSeparator>
+                        <BreadcrumbItem>
+                          <BreadcrumbLink href="/#blog">Blog</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator>
+                          <ChevronRight className="w-4 h-4" />
+                        </BreadcrumbSeparator>
+                        <BreadcrumbItem>
+                          <BreadcrumbPage className="max-w-40 truncate">{post.title}</BreadcrumbPage>
+                        </BreadcrumbItem>
+                      </BreadcrumbList>
+                    </Breadcrumb>
                     <h1 className="text-3xl md:text-4xl font-bold font-headline mb-4">
                       {post.title}
                     </h1>
