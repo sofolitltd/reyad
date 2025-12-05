@@ -30,7 +30,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
   return (
     <div className="flex flex-col h-screen bg-[#2a2d3d]">
       <SiteHeader />
-      <div className="flex-grow pt-12 relative">
+      <div className="flex flex-grow pt-12 relative">
         <aside
           className={cn(
             "bg-[#2a2d3d] text-white p-2 border-r border-border transition-all duration-300 ease-in-out h-full z-10",
@@ -49,8 +49,8 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
         <main
           className={cn(
             "flex-1 flex flex-col bg-background h-full transition-all duration-300 ease-in-out",
-             "md:ml-0", // Desktop: no margin when sidebar state changes
-             isExplorerOpen ? 'ml-16 md:ml-0' : 'ml-16' // Mobile: always have margin for the collapsed sidebar
+             "md:ml-0",
+             "ml-16"
           )}
         >
           {children}
