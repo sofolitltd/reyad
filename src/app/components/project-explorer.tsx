@@ -88,7 +88,7 @@ const ExplorerNode = ({
     return (
       <div>
         <div
-          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted"
+          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-accent/20"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isExpanded && (
@@ -121,8 +121,8 @@ const ExplorerNode = ({
   return (
     <div
       className={cn(
-        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted",
-        activeFile === node.id && "bg-muted"
+        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-accent/20",
+        activeFile === node.id && "bg-accent/20"
       )}
       onClick={handleNodeClick}
     >

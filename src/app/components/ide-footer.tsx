@@ -7,7 +7,7 @@ export function IdeFooter() {
     <footer className="bg-sidebar text-sidebar-foreground text-sm flex items-center justify-between px-2 md:px-4 py-1 border-t border-sidebar-border z-20">
       <div className="flex items-center gap-2 md:gap-4">
         <div className="flex items-center gap-1">
-          <GitBranch className="w-4 h-4 text-accent" />
+          <GitBranch className="w-4 h-4 text-primary" />
           <span>main</span>
         </div>
         <div className="hidden md:flex items-center gap-1">
