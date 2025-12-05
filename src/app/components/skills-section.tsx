@@ -8,9 +8,9 @@ const skills: Skill[] = [
   { name: "Dart", level: "Expert", icon: Code },
   { name: "Firebase", level: "Advanced", icon: Database },
   { name: "Git", level: "Advanced", icon: GitBranch },
-  { name: "Provider/Riverpod", level: "Advanced", icon: Code },
-  { name: "REST APIs", level: "Advanced", icon: Code },
-  { name: "Bloc", level: "Intermediate", icon: Code },
+  { name: "Riverpod", level: "Advanced", icon: Code },
+  { name: "REST APIs", level: "Intermediate", icon: Code },
+  { name: "Getx", level: "Intermediate", icon: Code },
   { name: "UI/UX Design", level: "Intermediate", icon: Smartphone },
 ];
 
@@ -33,7 +33,7 @@ export function SkillsSection() {
               <p className="font-bold text-sm md:text-base">{skill.name}</p>
               <Badge
                 variant="secondary"
-                className="mt-2 text-xs"
+                className="mt-2 text-xs font-normal"
               >
                 {skill.level}
               </Badge>
