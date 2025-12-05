@@ -13,7 +13,7 @@ export type Project = {
 
 export type Skill = {
   name: string;
-  proficiency: number;
+  level: "Expert" | "Advanced" | "Intermediate";
   icon: React.ComponentType<{ className?: string }> | LucideIcon;
 };
 

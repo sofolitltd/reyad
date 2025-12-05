@@ -78,11 +78,11 @@ export function ContactSection() {
   }, [state, toast, form]);
 
   return (
-    <section id="contact" className="scroll-mt-20">
+    <section id="contact" className="scroll-mt-20 pb-8">
       <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl mb-12 font-headline">
         Get In Touch
       </h2>
-      <Card className="max-w-xl mx-auto">
+      <Card className="max-w-xl mx-auto ">
         <CardHeader>
           <CardTitle className="text-center font-headline">Contact Me</CardTitle>
         </CardHeader>
