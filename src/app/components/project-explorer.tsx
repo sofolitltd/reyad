@@ -93,12 +93,12 @@ const ExplorerNode = ({
   return (
     <div
       className={cn(
-        "flex items-center cursor-pointer p-1 rounded-md hover:bg-muted",
+        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted",
         activeFile === node.id && "bg-muted"
       )}
       onClick={() => node.id && onSelectFile(node.id)}
     >
-      <Icon className="w-4 h-4 mr-2 text-accent" />
+      <Icon className="w-4 h-4 mx-2 text-accent" />
       {isExpanded && <span>{node.name}</span>}
     </div>
   );

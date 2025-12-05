@@ -9,45 +9,7 @@ import type { Post } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-
-const posts: Post[] = [
-  {
-    id: "blog-1",
-    title: "Advanced State Management in Flutter with Riverpod",
-    description:
-      "A comprehensive guide to leveraging Riverpod for scalable and maintainable state management in your Flutter applications.",
-    imageUrl: PlaceHolderImages.find((p) => p.id === "blog-1-thumbnail")!
-      .imageUrl,
-    imageHint: PlaceHolderImages.find((p) => p.id === "blog-1-thumbnail")!
-      .imageHint,
-    date: "July 18, 2024",
-    author: "Reyad",
-  },
-  {
-    id: "blog-2",
-    title: "Creating Custom Animations with Flutter's AnimationController",
-    description:
-      "Unlock the power of custom animations in Flutter. Learn how to use AnimationController and Tweens to bring your UI to life.",
-    imageUrl: PlaceHolderImages.find((p) => p.id === "blog-2-thumbnail")!
-      .imageUrl,
-    imageHint: PlaceHolderImages.find((p) => p.id === "blog-2-thumbnail")!
-      .imageHint,
-    date: "June 30, 2024",
-    author: "Reyad",
-  },
-  {
-    id: "blog-3",
-    title: "Integrating Firebase into Your Flutter App",
-    description:
-      "Step-by-step tutorial on adding Firebase for backend services like Authentication, Firestore, and Cloud Functions to your Flutter project.",
-    imageUrl: PlaceHolderImages.find((p) => p.id === "blog-3-thumbnail")!
-      .imageUrl,
-    imageHint: PlaceHolderImages.find((p) => p.id === "blog-3-thumbnail")!
-      .imageHint,
-    date: "May 22, 2024",
-    author: "Reyad",
-  },
-];
+import { posts } from "@/lib/blog-posts";
 
 export function BlogSection() {
   return (
@@ -57,7 +19,7 @@ export function BlogSection() {
       </h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <Link href="#" key={post.id}>
+          <Link href={`/blog/${post.id}`} key={post.id}>
             <Card className="flex flex-col h-full overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
               <CardHeader className="p-0">
                 <div className="aspect-video relative">

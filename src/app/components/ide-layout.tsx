@@ -22,7 +22,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
         <aside
           className={cn(
             "bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0 transition-all duration-300 ease-in-out",
-            isExplorerOpen ? "w-64" : "w-16"
+            isExplorerOpen ? "w-60" : "w-16"
           )}
         >
           <ProjectExplorer
