@@ -18,8 +18,6 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
     const checkSize = () => {
       if (window.innerWidth < 768) {
         setIsExplorerOpen(false);
-      } else {
-        setIsExplorerOpen(true);
       }
     };
     window.addEventListener("resize", checkSize);
@@ -28,17 +26,10 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
   }, []);
 
   return (
-    <div className="flex flex-col h-screen bg-[#2a2d3d] overflow-hidden">
+    <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
       <SiteHeader />
-      <div className="flex flex-grow pt-12 relative">
-        <aside
-          className={cn(
-            "bg-[#2a2d3d] text-white p-2 border-r border-border transition-all duration-300 ease-in-out h-full z-20",
-            "md:relative md:flex-shrink-0",
-            "absolute", // Mobile: absolute positioning as an overlay
-            isExplorerOpen ? "w-64" : "w-16"
-          )}
-        >
+      <div className="flex flex-1 pt-12 overflow-hidden">
+        <aside className={cn("bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0", isExplorerOpen ? "w-64" : "w-16")}>
           <ProjectExplorer
             onSelectFile={onSelectFile}
             activeFile={activeFile}
@@ -47,10 +38,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
           />
         </aside>
         
-        <div className={cn("flex-1 flex flex-col bg-background h-full transition-all duration-300 ease-in-out", 
-            "md:ml-0",
-            !isExplorerOpen && "ml-16" // Default margin for collapsed mobile view
-        )}>
+        <div className="flex-1 flex flex-col overflow-hidden">
           <main className="flex-1 overflow-y-auto">
             {children}
           </main>

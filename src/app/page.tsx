@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <IdeLayout onSelectFile={handleSelectFile} activeFile={activeTab}>
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col flex-grow h-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col">
           <TabsList className="bg-[#2a2d3d] border-b border-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
             {sections.map((section) => (
               <TabsTrigger
@@ -41,9 +41,9 @@ export default function Home() {
             ))}
           </TabsList>
 
-          <div className="flex-grow bg-background pb-16">
+          <div className="bg-background">
             {sections.map((section) => (
-              <TabsContent key={section.id} value={section.id} className="h-full mt-0">
+              <TabsContent key={section.id} value={section.id} className="mt-0">
                 <div className="container mx-auto px-4 py-8 md:py-12">
                   {section.component}
                 </div>
