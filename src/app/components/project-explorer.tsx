@@ -88,7 +88,7 @@ const ExplorerNode = ({
     return (
       <div>
         <div
-          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted"
+          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted/50"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isExpanded && (
@@ -121,7 +121,7 @@ const ExplorerNode = ({
   return (
     <div
       className={cn(
-        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted",
+        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted/50",
         activeFile === node.id && "bg-muted"
       )}
       onClick={handleNodeClick}
@@ -183,12 +183,14 @@ export function ProjectExplorer({
         </Button>
       </div>
       {isExpanded ? (
-         <ExplorerNode
-          node={structure}
-          onSelectFile={onSelectFile}
-          activeFile={activeFile}
-          isExpanded={isExpanded}
-        />
+         <div className="mt-2">
+            <ExplorerNode
+            node={structure}
+            onSelectFile={onSelectFile}
+            activeFile={activeFile}
+            isExpanded={isExpanded}
+            />
+         </div>
       ) : (
         <div className="flex flex-col items-center gap-4 mt-4">
              {allFiles.map((file) => (
