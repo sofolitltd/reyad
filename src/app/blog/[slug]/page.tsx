@@ -65,7 +65,7 @@ export default function BlogPostPage() {
             <div className="max-w-3xl mx-auto">
               <Card>
                 <CardContent className="p-6 md:p-8">
-                  <Breadcrumb className="mb-6">
+                  <Breadcrumb className="mb-8">
                     <BreadcrumbList>
                       <BreadcrumbItem>
                         <BreadcrumbLink asChild>
@@ -89,7 +89,7 @@ export default function BlogPostPage() {
                     </BreadcrumbList>
                   </Breadcrumb>
                 
-                  <div className="mb-6 mt-8">
+                  <div className="mb-6">
                     <h1 className="text-3xl md:text-4xl font-bold font-headline mb-4">
                       {post.title}
                     </h1>
