@@ -98,14 +98,14 @@ export function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-20 pb-8">
       <Card className="max-w-4xl mx-auto overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-5">
           {/* Left Side: Contact Info */}
-          <div className="p-8 bg-muted/30 flex flex-col justify-between">
+          <div className="p-8 bg-muted/30 flex flex-col justify-between md:col-span-2">
             <div>
               <h2 className="text-2xl font-bold font-headline mb-2 text-foreground">
                 Let's Connect
               </h2>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-muted-foreground text-sm mb-8">
                 I'm happy to chat about new projects, collaborations, or just
                 say hello!
               </p>
@@ -146,7 +146,7 @@ export function ContactSection() {
           </div>
 
           {/* Right Side: Form */}
-          <div className="p-8">
+          <div className="p-8 md:col-span-3">
              <h2 className="text-2xl font-bold font-headline mb-6">Send a Message</h2>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
