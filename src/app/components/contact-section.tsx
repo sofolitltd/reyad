@@ -100,28 +100,28 @@ export function ContactSection() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left Side: Contact Info */}
-          <div className="p-8 bg-primary text-primary-foreground flex flex-col justify-between">
+          <div className="p-8 bg-muted/30 flex flex-col justify-between">
             <div>
-              <h2 className="text-2xl font-bold font-headline mb-2">
+              <h2 className="text-2xl font-bold font-headline mb-2 text-foreground">
                 Let's Connect
               </h2>
-              <p className="text-primary-foreground/80 mb-8">
+              <p className="text-muted-foreground mb-8">
                 I'm happy to chat about new projects, collaborations, or just
                 say hello!
               </p>
               <div className="space-y-4 text-sm">
                 <a
                   href="mailto:asifreyad1@gmail.com"
-                  className="flex items-center gap-3 hover:text-primary-foreground/80 transition-colors"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5 text-primary" />
                   <span>asifreyad1@gmail.com</span>
                 </a>
                 <a
                   href="tel:+8801704340860"
-                  className="flex items-center gap-3 hover:text-primary-foreground/80 transition-colors"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <Phone className="w-5 h-5" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>01704340860</span>
                 </a>
               </div>
@@ -133,14 +133,14 @@ export function ContactSection() {
                     aria-label={link.name}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full flex items-center justify-center bg-primary-foreground/20 hover:bg-primary-foreground/30 transition-colors"
+                    className="w-8 h-8 rounded-full flex items-center justify-center bg-muted hover:bg-border transition-colors"
                   >
-                    <link.icon className="w-4 h-4 text-primary-foreground" />
+                    <link.icon className="w-4 h-4 text-muted-foreground" />
                   </Link>
                 ))}
               </div>
             </div>
-             <p className="text-xs text-primary-foreground/60 mt-8">
+             <p className="text-xs text-muted-foreground mt-8">
               I reply to most messages within 24 hours.
             </p>
           </div>
