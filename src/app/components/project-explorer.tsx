@@ -88,7 +88,7 @@ const ExplorerNode = ({
     return (
       <div>
         <div
-          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-accent/50"
+          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isExpanded && (
@@ -121,8 +121,8 @@ const ExplorerNode = ({
   return (
     <div
       className={cn(
-        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-accent/50",
-        activeFile === node.id && "bg-accent/50"
+        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted",
+        activeFile === node.id && "bg-muted"
       )}
       onClick={handleNodeClick}
     >
@@ -182,7 +182,7 @@ export function ProjectExplorer({
             )}
         </Button>
       </div>
-       {isExpanded && <Separator className="mb-2" />}
+       {<Separator className="mb-2" />}
       {isExpanded ? (
          <ExplorerNode
           node={structure}
