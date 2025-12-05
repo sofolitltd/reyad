@@ -2,7 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
-import { Code, GitBranch, Facebook, Linkedin, Youtube, User, Feather } from "lucide-react";
+import { Code, GitBranch, Facebook, Linkedin, Youtube, User, Feather, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const profileImage = PlaceHolderImages.find(
   (img) => img.id === "profile-picture"
@@ -97,6 +98,16 @@ export function AboutSection() {
                   <Youtube className="w-5 h-5 text-red-600" />
                 </Link>
               </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6 flex justify-center">
+              <Button asChild>
+                <Link href="/reyad-cv.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </Link>
+              </Button>
             </CardContent>
           </Card>
           <Card>
