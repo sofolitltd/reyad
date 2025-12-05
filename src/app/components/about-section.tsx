@@ -57,9 +57,9 @@ class ProfileCard extends StatelessWidget {
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-20">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Column: Profile & Info */}
-        <div className="lg:col-span-1 space-y-8">
+        <div className="space-y-8">
           <Card className="overflow-hidden text-center">
             <CardContent className="p-6">
               {profileImage && (
@@ -128,7 +128,7 @@ export function AboutSection() {
         </div>
 
         {/* Right Column: Code Snippet */}
-        <div className="lg:col-span-2">
+        <div>
            <Card className="h-full flex flex-col">
              <CardHeader>
                 <CardTitle className="font-headline text-xl flex items-center gap-2">
@@ -137,7 +137,7 @@ export function AboutSection() {
                 </CardTitle>
              </CardHeader>
             <CardContent className="flex-grow">
-                 <pre className="language-dart bg-muted/40 rounded-lg p-4 overflow-x-auto text-sm font-code h-full">
+                 <pre className="language-dart bg-muted/40 rounded-lg p-4 text-sm font-code h-full overflow-x-hidden whitespace-pre-wrap">
                     <code>{codeSnippet}</code>
                 </pre>
             </CardContent>
