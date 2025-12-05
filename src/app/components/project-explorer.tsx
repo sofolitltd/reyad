@@ -17,6 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Separator } from "@/components/ui/separator";
 
 const structure = {
   name: "portfolio",
@@ -29,7 +30,7 @@ const structure = {
         { name: "about.dart", type: "file", id: "about", icon: File, color: "text-blue-400" },
         { name: "skills.dart", type: "file", id: "skills", icon: Code, color: "text-green-400" },
         { name: "projects.dart", type: "file", id: "portfolio", icon: Briefcase, color: "text-purple-400" },
-        { name: "blog.dart", type: "file", id: "blog", icon: Rss, color: "text-red-400" },
+        { name: "blog.dart", type: "file", id: "blog", icon: Rss, color: "text-orange-400" },
         { name: "contact.dart", type: "file", id: "contact", icon: Mail, color: "text-teal-400" },
       ],
     },
@@ -87,7 +88,7 @@ const ExplorerNode = ({
     return (
       <div>
         <div
-          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted"
+          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-sidebar-accent"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isExpanded && (
@@ -120,7 +121,7 @@ const ExplorerNode = ({
   return (
     <div
       className={cn(
-        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted",
+        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-sidebar-accent",
         activeFile === node.id && "bg-muted"
       )}
       onClick={handleNodeClick}
