@@ -42,7 +42,6 @@ export function DraggableTab({ section, handleCloseTab }: DraggableTabProps) {
       style={style}
       {...attributes}
       {...listeners}
-      key={section.id}
       value={section.id}
       className="h-full rounded-none px-3 pr-2 text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground border-r border-transparent data-[state=active]:border-border flex-shrink-0 group"
     >
