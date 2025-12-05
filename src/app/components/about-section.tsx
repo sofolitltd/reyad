@@ -26,11 +26,8 @@ console.log(me.sayHello());
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-20">
-      <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl mb-12 font-headline">
-        About Me
-      </h2>
-      <Card className="overflow-hidden">
-        <div className="grid md:grid-cols-2">
+      <Card className="overflow-hidden bg-transparent border-none shadow-none">
+        <div className="grid md:grid-cols-2 gap-12">
           <div className="p-8">
             <div className="flex items-center gap-6 mb-6">
               {profileImage && (
@@ -66,7 +63,7 @@ export function AboutSection() {
               </p>
             </div>
           </div>
-          <div className="bg-muted p-6 md:p-8">
+          <div className="bg-muted/40 p-6 md:p-8 rounded-lg">
             <pre className="language-javascript bg-background/50 rounded-lg p-4 overflow-x-auto text-sm font-code h-full">
               <code>{codeSnippet}</code>
             </pre>

@@ -5,15 +5,9 @@ import { SidebarProvider, Sidebar, SidebarInset } from "@/components/ui/sidebar"
 import MainNav from "@/components/main-nav";
 import { SiteHeader } from "@/components/site-header";
 import {
-  Briefcase,
   Github,
-  Home,
   Linkedin,
-  Mail,
-  Rss,
   Twitter,
-  User,
-  Wrench,
 } from "lucide-react";
 import {
   SidebarContent,
@@ -24,7 +18,6 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "FlutterFlow Portfolio",
@@ -79,9 +72,6 @@ export default function RootLayout({
                       strokeWidth="24"
                     />
                   </svg>
-                  <span className="font-bold text-lg group-data-[collapsible=icon]:hidden transition-all duration-300">
-                    FlutterFlow
-                  </span>
                 </Link>
               </SidebarHeader>
               <SidebarContent className="p-2">
@@ -125,9 +115,9 @@ export default function RootLayout({
                 </SidebarMenu>
               </SidebarFooter>
             </Sidebar>
-            <SidebarInset className="flex-1">
+            <SidebarInset className="flex-1 flex flex-col">
               <SiteHeader />
-              <main>{children}</main>
+              <main className="flex-grow">{children}</main>
             </SidebarInset>
           </div>
         </SidebarProvider>
