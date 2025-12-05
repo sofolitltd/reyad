@@ -1,5 +1,6 @@
 "use client";
 import { GitBranch, Code, Server, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 export function IdeFooter() {
   return (
@@ -22,10 +23,15 @@ export function IdeFooter() {
           <Server className="w-4 h-4" />
           <span>Next.js</span>
         </div>
-        <div className="hidden md:flex items-center gap-1 text-green-400">
+        <Link
+          href="https://wa.me/+8801704340860"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex items-center gap-1 text-primary hover:brightness-125 transition-all"
+        >
           <CheckCircle className="w-4 h-4" />
-          <span>Ready</span>
-        </div>
+          <span>Online</span>
+        </Link>
       </div>
     </footer>
   );
