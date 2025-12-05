@@ -29,28 +29,28 @@ const socialLinks = [
     href: "https://linkedin.com/in/asifuzzamanreyad",
     icon: FaLinkedin,
     label: "LinkedIn Profile",
-    color: "text-sky-700",
+    color: "hover:text-primary",
   },
   {
     name: "Facebook",
     href: "https://facebook.com/asifuzzamanreyad",
     icon: FaFacebook,
     label: "Facebook Profile",
-    color: "text-blue-600",
+    color: "hover:text-primary",
   },
   {
     name: "YouTube",
     href: "https://youtube.com/@sofolitltd",
     icon: FaYoutube,
     label: "YouTube Channel",
-    color: "text-red-600",
+    color: "hover:text-red-500",
   },
   {
     name: "WhatsApp",
     href: "https://wa.me/+8801704340860",
     icon: FaWhatsapp,
     label: "WhatsApp",
-    color: "text-green-500",
+    color: "hover:text-green-500",
   },
 ];
 
@@ -130,7 +130,7 @@ export function AboutSection() {
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-muted transition-colors"
                   >
-                    <link.icon className={`w-5 h-5 ${link.color}`} />
+                    <link.icon className={`w-5 h-5 text-muted-foreground transition-colors ${link.color}`} />
                   </Link>
                 ))}
               </div>
