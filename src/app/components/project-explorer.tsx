@@ -27,18 +27,18 @@ const structure = {
       name: "lib",
       type: "folder",
       children: [
-        { name: "about.dart", type: "file", id: "about", icon: File },
-        { name: "skills.dart", type: "file", id: "skills", icon: Code },
-        { name: "projects.dart", type: "file", id: "portfolio", icon: Briefcase },
-        { name: "blog.dart", type: "file", id: "blog", icon: Rss },
-        { name: "contact.dart", type: "file", id: "contact", icon: Mail },
+        { name: "about.dart", type: "file", id: "about", icon: File, color: "text-blue-400" },
+        { name: "skills.dart", type: "file", id: "skills", icon: Code, color: "text-green-400" },
+        { name: "projects.dart", type: "file", id: "portfolio", icon: Briefcase, color: "text-orange-400" },
+        { name: "blog.dart", type: "file", id: "blog", icon: Rss, color: "text-red-400" },
+        { name: "contact.dart", type: "file", id: "contact", icon: Mail, color: "text-teal-400" },
       ],
     },
     {
       name: "public",
       type: "folder",
       children: [
-        { name: "cv.pdf", type: "file", id: "download-cv", icon: Download },
+        { name: "cv.pdf", type: "file", id: "download-cv", icon: Download, color: "text-purple-400" },
       ],
     },
   ],
@@ -49,6 +49,7 @@ type FileOrFolder = {
   type: "folder" | "file";
   id?: string;
   icon?: React.ElementType;
+  color?: string;
   children?: FileOrFolder[];
 };
 
@@ -125,7 +126,7 @@ const ExplorerNode = ({
       )}
       onClick={handleNodeClick}
     >
-      <Icon className="w-4 h-4 mx-2 text-muted-foreground" />
+      <Icon className={cn("w-4 h-4 mx-2", node.color || "text-muted-foreground")} />
       {isExpanded && <span>{node.name}</span>}
     </div>
   );
@@ -155,6 +156,10 @@ export function ProjectExplorer({
     }
     onSelectFile(fileId);
   }
+
+  const libFiles = structure.children.find(c => c.name === 'lib')?.children || [];
+  const publicFiles = structure.children.find(c => c.name === 'public')?.children || [];
+  const allFiles = [...libFiles, ...publicFiles];
 
   return (
     <div>
@@ -187,12 +192,15 @@ export function ProjectExplorer({
         />
       ) : (
         <div className="flex flex-col items-center gap-4 mt-4">
-            <Button variant="ghost" size="icon" onClick={() => handleFileSelect('download-cv')}>
-                <Download className="w-6 h-6" />
-            </Button>
-             {structure.children.find(c => c.name === 'lib')?.children?.map((file) => (
-                 <Button variant={activeFile === file.id ? "secondary" : "ghost"} size="icon" key={file.id} onClick={() => file.id && onSelectFile(file.id)}>
-                    <file.icon className="w-6 h-6" />
+             {allFiles.map((file) => (
+                 <Button 
+                    variant={activeFile === file.id ? "secondary" : "ghost"} 
+                    size="icon" 
+                    key={file.id} 
+                    onClick={() => file.id && handleFileSelect(file.id)}
+                    aria-label={file.name}
+                    >
+                    <file.icon className={cn("w-6 h-6", file.color)} />
                  </Button>
              ))}
         </div>
