@@ -10,14 +10,13 @@ import {
   Rss,
   Mail,
   FolderOpen,
-  FolderKanban,
+  PanelRightClose,
   PanelLeftClose,
   Download,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Separator } from "@/components/ui/separator";
 
 const structure = {
   name: "portfolio",
@@ -88,7 +87,7 @@ const ExplorerNode = ({
     return (
       <div>
         <div
-          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted/50"
+          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isExpanded && (
@@ -121,7 +120,7 @@ const ExplorerNode = ({
   return (
     <div
       className={cn(
-        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted/50",
+        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted",
         activeFile === node.id && "bg-muted"
       )}
       onClick={handleNodeClick}
@@ -178,7 +177,7 @@ export function ProjectExplorer({
             {isExpanded ? (
                 <PanelLeftClose className="w-4 h-4 text-foreground" />
             ) : (
-                <FolderKanban className="w-5 h-5 text-primary" />
+                <PanelRightClose className="w-5 h-5 text-foreground" />
             )}
         </Button>
       </div>
