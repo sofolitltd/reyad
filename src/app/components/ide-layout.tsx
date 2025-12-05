@@ -4,7 +4,6 @@ import { ProjectExplorer } from "./project-explorer";
 import { IdeFooter } from "./ide-footer";
 import { SiteHeader } from "@/components/site-header";
 import { cn } from "@/lib/utils";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 interface IdeLayoutProps {
   children: React.ReactNode;
@@ -13,16 +12,20 @@ interface IdeLayoutProps {
 }
 
 export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps) {
-  const isMobile = useIsMobile();
   const [isExplorerOpen, setIsExplorerOpen] = useState(true);
 
   useEffect(() => {
-    if (isMobile) {
-      setIsExplorerOpen(false);
-    } else {
-      setIsExplorerOpen(true);
-    }
-  }, [isMobile]);
+    const checkSize = () => {
+      if (window.innerWidth < 768) {
+        setIsExplorerOpen(false);
+      } else {
+        setIsExplorerOpen(true);
+      }
+    };
+    window.addEventListener("resize", checkSize);
+    checkSize(); // Initial check
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
 
   return (
     <div className="flex flex-col h-screen bg-[#2a2d3d]">
@@ -30,7 +33,8 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
       <div className="flex flex-grow overflow-hidden pt-12">
         <aside
           className={cn(
-            "bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0 transition-all duration-300 ease-in-out absolute sm:relative z-10 h-full sm:h-auto",
+            "bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0 transition-all duration-300 ease-in-out z-10 h-full",
+            "sm:relative",
             isExplorerOpen ? "w-64" : "w-16"
           )}
         >
@@ -41,11 +45,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
             onToggleExpand={() => setIsExplorerOpen(!isExplorerOpen)}
           />
         </aside>
-        <main className={cn(
-          "flex-1 flex flex-col bg-background transition-all duration-300 ease-in-out",
-          isMobile && isExplorerOpen ? "ml-64" : (isMobile ? "ml-16" : ""),
-          "sm:ml-0"
-          )}>
+        <main className="flex-1 flex flex-col bg-background">
           {children}
         </main>
       </div>

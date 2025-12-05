@@ -6,7 +6,6 @@ import { BlogSection } from "./components/blog-section";
 import { ContactSection } from "./components/contact-section";
 import { PortfolioSection } from "./components/portfolio-section";
 import { SkillsSection } from "./components/skills-section";
-import { IdeFooter } from "./components/ide-footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { File, Code, Briefcase, Rss, Mail } from "lucide-react";
 import { IdeLayout } from "./components/ide-layout";
