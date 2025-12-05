@@ -29,7 +29,7 @@ const structure = {
       children: [
         { name: "about.dart", type: "file", id: "about", icon: File, color: "text-blue-400" },
         { name: "skills.dart", type: "file", id: "skills", icon: Code, color: "text-green-400" },
-        { name: "projects.dart", type: "file", id: "portfolio", icon: Briefcase, color: "text-orange-400" },
+        { name: "projects.dart", type: "file", id: "portfolio", icon: Briefcase, color: "text-purple-400" },
         { name: "blog.dart", type: "file", id: "blog", icon: Rss, color: "text-red-400" },
         { name: "contact.dart", type: "file", id: "contact", icon: Mail, color: "text-teal-400" },
       ],
@@ -162,15 +162,15 @@ export function ProjectExplorer({
   const allFiles = [...libFiles, ...publicFiles];
 
   return (
-    <div>
+    <div className="p-2">
       <div
         className={cn(
-          "flex items-center justify-between p-1 mb-2",
+          "flex items-center justify-between",
           !isExpanded && "justify-center"
         )}
       >
         {isExpanded && (
-          <h3 className="text-sm font-medium uppercase text-muted-foreground flex-grow">
+          <h3 className="text-sm font-medium uppercase text-muted-foreground flex-grow pl-2">
             Explorer
           </h3>
         )}
@@ -182,7 +182,6 @@ export function ProjectExplorer({
             )}
         </Button>
       </div>
-       {<Separator className="mb-2" />}
       {isExpanded ? (
          <ExplorerNode
           node={structure}
