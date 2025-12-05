@@ -100,7 +100,7 @@ const ExplorerNode = ({
           {isExpanded && <span>{node.name}</span>}
         </div>
         {isOpen && isExpanded && (
-          <div className="pl-4">
+          <div className="pl-4 mt-2">
             {node.children?.map((child) => (
               <ExplorerNode
                 key={child.name}
@@ -122,7 +122,7 @@ const ExplorerNode = ({
     <div
       className={cn(
         "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-primary/20",
-        activeFile === node.id && "bg-muted"
+        activeFile === node.id && "bg-background"
       )}
       onClick={handleNodeClick}
     >
@@ -194,11 +194,12 @@ export function ProjectExplorer({
           <div className="flex flex-col items-center gap-4 mt-4">
               {allFiles.map((file) => (
                   <Button 
-                      variant={activeFile === file.id ? "secondary" : "ghost"} 
+                      variant={"ghost"} 
                       size="icon" 
                       key={file.id} 
                       onClick={() => file.id && handleFileSelect(file.id)}
                       aria-label={file.name}
+                      className={cn(activeFile === file.id && "bg-background")}
                       >
                       <file.icon className={cn("w-6 h-6 hover:text-current", file.color)} />
                   </Button>
