@@ -96,7 +96,7 @@ export default function Home() {
           collisionDetection={closestCenter}
           onDragEnd={handleDragEnd}
         >
-          <TabsList className="bg-[#2a2d3d] border-b border-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
+          <TabsList className="bg-sidebar border-b border-sidebar-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
               <SortableContext items={openTabs} strategy={horizontalListSortingStrategy}>
                 {openTabs.map((section) => (
                   <DraggableTab

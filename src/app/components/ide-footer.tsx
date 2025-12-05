@@ -3,7 +3,7 @@ import { GitBranch, Code, Server, CheckCircle } from "lucide-react";
 
 export function IdeFooter() {
   return (
-    <footer className="bg-[#2a2d3d] text-sm text-muted-foreground flex items-center justify-between px-2 md:px-4 py-1 border-t border-border z-20">
+    <footer className="bg-sidebar text-sidebar-foreground text-sm flex items-center justify-between px-2 md:px-4 py-1 border-t border-sidebar-border z-20">
       <div className="flex items-center gap-2 md:gap-4">
         <div className="flex items-center gap-1">
           <GitBranch className="w-4 h-4 text-accent" />
