@@ -17,7 +17,11 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
   const [isExplorerOpen, setIsExplorerOpen] = useState(true);
 
   useEffect(() => {
-    setIsExplorerOpen(!isMobile);
+    if (isMobile) {
+      setIsExplorerOpen(false);
+    } else {
+      setIsExplorerOpen(true);
+    }
   }, [isMobile]);
 
   return (
@@ -39,7 +43,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
         </aside>
         <main className={cn(
           "flex-1 flex flex-col bg-background transition-all duration-300 ease-in-out",
-          isMobile && isExplorerOpen ? "ml-64" : "ml-16",
+          isMobile && isExplorerOpen ? "ml-64" : (isMobile ? "ml-16" : ""),
           "sm:ml-0"
           )}>
           {children}

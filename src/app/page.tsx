@@ -45,7 +45,7 @@ export default function Home() {
           <div className="flex-grow overflow-auto bg-background pb-16">
             {sections.map((section) => (
               <TabsContent key={section.id} value={section.id} className="h-full mt-0">
-                <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
+                <div className="container mx-auto px-4 py-8 md:py-12">
                   {section.component}
                 </div>
               </TabsContent>
