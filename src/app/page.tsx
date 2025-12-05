@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -21,7 +20,7 @@ const allSections = [
 ];
 
 export default function Home() {
-  const [openTabs, setOpenTabs] = useState([allSections[0]]);
+  const [openTabs, setOpenTabs] = useState(allSections);
   const [activeTab, setActiveTab] = useState("about");
 
   const handleSelectFile = (fileId: string) => {
