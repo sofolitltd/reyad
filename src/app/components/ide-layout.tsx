@@ -1,8 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { ProjectExplorer } from "./project-explorer";
 import { IdeFooter } from "./ide-footer";
 import { SiteHeader } from "@/components/site-header";
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface IdeLayoutProps {
   children: React.ReactNode;
@@ -11,12 +15,38 @@ interface IdeLayoutProps {
 }
 
 export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps) {
+  const isMobile = useIsMobile();
+  const [isExplorerOpen, setIsExplorerOpen] = useState(!isMobile);
+
   return (
     <div className="flex flex-col h-screen bg-[#2a2d3d]">
-      <SiteHeader />
+      <SiteHeader>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setIsExplorerOpen(!isExplorerOpen)}
+          className="mr-2"
+        >
+          {isExplorerOpen ? (
+            <PanelLeftClose className="h-5 w-5" />
+          ) : (
+            <PanelLeftOpen className="h-5 w-5" />
+          )}
+        </Button>
+      </SiteHeader>
       <div className="flex flex-grow overflow-hidden">
-        <aside className="w-64 bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0">
-          <ProjectExplorer onSelectFile={onSelectFile} activeFile={activeFile} />
+        <aside
+          className={cn(
+            "bg-[#2a2d3d] text-white p-2 border-r border-border flex-shrink-0 transition-all duration-300 ease-in-out",
+            isExplorerOpen ? "w-64" : "w-14"
+          )}
+        >
+          <ProjectExplorer
+            onSelectFile={onSelectFile}
+            activeFile={activeFile}
+            isExpanded={isExplorerOpen}
+            onToggleExpand={() => setIsExplorerOpen(!isExplorerOpen)}
+          />
         </aside>
         <main className="flex-1 flex flex-col bg-background">
           {children}

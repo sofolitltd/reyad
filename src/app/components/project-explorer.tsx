@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   ChevronRight,
   Folder,
@@ -10,8 +9,10 @@ import {
   Rss,
   Mail,
   FolderOpen,
+  FolderKanban,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const structure = {
   name: "portfolio",
@@ -43,30 +44,44 @@ const ExplorerNode = ({
   node,
   onSelectFile,
   activeFile,
+  isExpanded,
+  isOpen,
+  onToggle,
 }: {
   node: FileOrFolder;
   onSelectFile: (fileId: string) => void;
   activeFile: string;
+  isExpanded: boolean;
+  isOpen: boolean;
+  onToggle: () => void;
 }) => {
-  const [isOpen, setIsOpen] = useState(true);
-
   if (node.type === "folder") {
     return (
       <div>
         <div
           className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={onToggle}
         >
-          <ChevronRight
-            className={cn("w-4 h-4 mr-1 transition-transform", isOpen && "rotate-90")}
-          />
+          {isExpanded && (
+            <ChevronRight
+              className={cn("w-4 h-4 mr-1 transition-transform", isOpen && "rotate-90")}
+            />
+          )}
           {isOpen ? <FolderOpen className="w-4 h-4 mr-2 text-primary" /> : <Folder className="w-4 h-4 mr-2 text-primary" />}
-          <span>{node.name}</span>
+          {isExpanded && <span>{node.name}</span>}
         </div>
-        {isOpen && (
+        {isOpen && isExpanded && (
           <div className="pl-4">
             {node.children?.map((child) => (
-              <ExplorerNode key={child.name} node={child} onSelectFile={onSelectFile} activeFile={activeFile} />
+              <ExplorerNode
+                key={child.name}
+                node={child}
+                onSelectFile={onSelectFile}
+                activeFile={activeFile}
+                isExpanded={isExpanded}
+                isOpen={true} // Child nodes are always "open" in this context
+                onToggle={() => {}} // Children don't toggle folders
+              />
             ))}
           </div>
         )}
@@ -85,18 +100,52 @@ const ExplorerNode = ({
       onClick={() => node.id && onSelectFile(node.id)}
     >
       <Icon className="w-4 h-4 mr-2 text-accent" />
-      <span>{node.name}</span>
+      {isExpanded && <span>{node.name}</span>}
     </div>
   );
 };
 
-export function ProjectExplorer({ onSelectFile, activeFile }: { onSelectFile: (fileId: string) => void; activeFile: string }) {
+export function ProjectExplorer({
+  onSelectFile,
+  activeFile,
+  isExpanded,
+  onToggleExpand,
+}: {
+  onSelectFile: (fileId: string) => void;
+  activeFile: string;
+  isExpanded: boolean;
+  onToggleExpand: () => void;
+}) {
   return (
     <div>
-      <h3 className="text-sm font-bold uppercase text-muted-foreground p-1 mb-2">
-        Explorer
-      </h3>
-      <ExplorerNode node={structure} onSelectFile={onSelectFile} activeFile={activeFile} />
+      <div
+        className={cn(
+          "flex items-center justify-between p-1 mb-2",
+          !isExpanded && "justify-center"
+        )}
+      >
+        {isExpanded && (
+          <h3 className="text-sm font-bold uppercase text-muted-foreground">
+            Explorer
+          </h3>
+        )}
+      </div>
+      {isExpanded ? (
+         <ExplorerNode
+          node={structure}
+          onSelectFile={onSelectFile}
+          activeFile={activeFile}
+          isExpanded={isExpanded}
+          isOpen={true}
+          onToggle={() => {}}
+        />
+      ) : (
+        <div className="flex flex-col items-center gap-2">
+             <Button variant="ghost" size="icon" onClick={onToggleExpand}>
+                <FolderKanban className="w-6 h-6 text-primary" />
+             </Button>
+        </div>
+      )}
     </div>
   );
 }
