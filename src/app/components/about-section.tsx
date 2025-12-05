@@ -57,8 +57,8 @@ class ProfileCard extends StatelessWidget {
 
 export function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <section id="about" className="scroll-mt-20 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-8">
         {/* Left Column: Profile & Info */}
         <div className="space-y-8">
           <Card className="overflow-hidden text-center">

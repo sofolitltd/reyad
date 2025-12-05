@@ -4,6 +4,39 @@ import { ProjectCard } from "./project-card";
 
 const projectsData: Project[] = [
   {
+    id: "proj-4",
+    title: "Doctor App",
+    description: "A Flutter application for booking doctor appointments, managing patient records, and handling online consultations.",
+    imageUrl: PlaceHolderImages.find((img) => img.id === "project-4-screenshot")!
+      .imageUrl,
+    imageHint: PlaceHolderImages.find((img) => img.id === "project-4-screenshot")!
+      .imageHint,
+    tags: ["Flutter", "Dart", "Firebase", "GetX"],
+    repoLink: "https://github.com/sofolitltd/doctor-app",
+  },
+  {
+    id: "proj-5",
+    title: "Food Delivery App UI",
+    description: "A beautiful and responsive UI kit for a food delivery application, built with Flutter. Includes over 30 unique screens.",
+    imageUrl: PlaceHolderImages.find((img) => img.id === "project-5-screenshot")!
+      .imageUrl,
+    imageHint: PlaceHolderImages.find((img) => img.id === "project-5-screenshot")!
+      .imageHint,
+    tags: ["Flutter", "Dart", "UI/UX"],
+    repoLink: "https://github.com/sofolitltd/food-delivery-app-ui",
+  },
+  {
+    id: "proj-6",
+    title: "Real Estate App UI",
+    description: "A clean and modern UI for a real estate application. Features property listings, search filters, and agent profiles. Built with Flutter.",
+    imageUrl: PlaceHolderImages.find((img) => img.id === "project-6-screenshot")!
+      .imageUrl,
+    imageHint: PlaceHolderImages.find((img) => img.id === "project-6-screenshot")!
+      .imageHint,
+    tags: ["Flutter", "Dart", "UI Design"],
+    repoLink: "https://github.com/sofolitltd/real-estate-app-flutter-ui",
+  },
+  {
     id: "proj-1",
     title: "E-Commerce App",
     description:

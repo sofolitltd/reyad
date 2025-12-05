@@ -25,6 +25,24 @@
       "imageHint": "dashboard ui"
     },
     {
+      "id": "project-4-screenshot",
+      "description": "Screenshot of Doctor App project.",
+      "imageUrl": "https://images.unsplash.com/photo-1631507623095-c710d184498f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2FsJTIwYXBwfGVufDB8fHx8MTc2NDk2MTUxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical app"
+    },
+    {
+      "id": "project-5-screenshot",
+      "description": "Screenshot of Food Delivery App project.",
+      "imageUrl": "https://images.unsplash.com/photo-1729860649884-40ec104f9dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmb29kJTIwYXBwfGVufDB8fHx8MTc2NDkyMDQxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food app"
+    },
+    {
+      "id": "project-6-screenshot",
+      "description": "Screenshot of Real Estate App project.",
+      "imageUrl": "https://images.unsplash.com/photo-1740440811799-a5db75bce6d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob3VzZSUyMGxpc3RpbmdzfGVufDB8fHx8MTc2NDk2MTUxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "house listings"
+    },
+    {
       "id": "blog-1-thumbnail",
       "description": "Thumbnail for the first blog post.",
       "imageUrl": "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2RlJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzY0ODc0NjM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
