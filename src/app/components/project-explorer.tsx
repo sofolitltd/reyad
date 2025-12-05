@@ -88,7 +88,7 @@ const ExplorerNode = ({
     return (
       <div>
         <div
-          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-accent/20"
+          className="flex items-center cursor-pointer p-1 rounded-md hover:bg-accent/50"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isExpanded && (
@@ -121,8 +121,8 @@ const ExplorerNode = ({
   return (
     <div
       className={cn(
-        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-accent/20",
-        activeFile === node.id && "bg-accent/20"
+        "flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-accent/50",
+        activeFile === node.id && "bg-accent/50"
       )}
       onClick={handleNodeClick}
     >
@@ -176,7 +176,7 @@ export function ProjectExplorer({
         )}
          <Button variant="ghost" size="icon" className="h-8 w-8" onClick={onToggleExpand}>
             {isExpanded ? (
-                <PanelLeftClose className="w-4 h-4" />
+                <PanelLeftClose className="w-4 h-4 text-foreground" />
             ) : (
                 <FolderKanban className="w-5 h-5 text-primary" />
             )}
