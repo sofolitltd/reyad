@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { BlogPostContent } from '@/app/components/blog-post-content';
 
 
 type Props = {
@@ -114,9 +115,7 @@ export default function BlogPostPage({ params }: Props) {
                     </div>
                   </div>
 
-                  <div className="prose prose-invert prose-lg max-w-none mx-auto text-foreground"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                  />
+                  <BlogPostContent content={post.content} />
 
                    <Button
                       variant="ghost"
