@@ -84,13 +84,13 @@
     },
     {
       "id": "blog-9-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1533414408880-405527185f1c?q=80&w=1200&auto=format&fit=crop",
-      "imageHint": "light dark"
+      "imageUrl": "https://images.unsplash.com/photo-1621452353145-a4f6e47d10c4?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "light dark mode"
     },
     {
       "id": "blog-10-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1593435713463-e383a88137f4?q=80&w=1200&auto=format&fit=crop",
-      "imageHint": "network data"
+      "imageUrl": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "api code"
     },
     {
       "id": "blog-11-thumbnail",
@@ -99,13 +99,13 @@
     },
     {
       "id": "blog-12-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1616445524229-f7d9324b33d6?q=80&w=1200&auto=format&fit=crop",
-      "imageHint": "device storage"
+      "imageUrl": "https://images.unsplash.com/photo-1588665809887-5f6a4a617042?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "phone storage"
     },
     {
       "id": "blog-13-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1534792477659-b0c3a99e4604?q=80&w=1200&auto=format&fit=crop",
-      "imageHint": "app performance"
+      "imageUrl": "https://images.unsplash.com/photo-1599423300020-918b8243a91c?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "performance dashboard"
     },
     {
       "id": "blog-14-thumbnail",
@@ -114,8 +114,8 @@
     },
     {
       "id": "blog-15-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1543357484-a8885e349769?q=80&w=1200&auto=format&fit=crop",
-      "imageHint": "app deployment"
+      "imageUrl": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "mobile app store"
     },
     {
       "id": "blog-16-thumbnail",
@@ -124,7 +124,7 @@
     },
     {
       "id": "blog-17-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1633412802994-5c928c75e6b2?q=80&w=1200&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1634923053772-7b2330656a81?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "flutter code"
     },
     {
@@ -144,8 +144,8 @@
     },
     {
       "id": "blog-21-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1599658880121-d41a502fac2c?q=80&w=1200&auto=format&fit=crop",
-      "imageHint": "firebase logo"
+      "imageUrl": "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "firebase security"
     },
     {
       "id": "blog-22-thumbnail",
@@ -154,8 +154,8 @@
     },
     {
       "id": "blog-23-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1629904853716-f0bc64219491?q=80&w=1200&auto=format&fit=crop",
-      "imageHint": "UI design"
+      "imageUrl": "https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "UI design process"
     },
     {
       "id": "blog-24-thumbnail",
@@ -179,7 +179,7 @@
     },
     {
       "id": "blog-28-thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1507721999472-8ed4421b436d?q=80&w=1200&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "creative coding"
     },
     {
