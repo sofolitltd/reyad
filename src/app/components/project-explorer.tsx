@@ -175,7 +175,7 @@ export function ProjectExplorer({
             <h3 className="text-sm font-medium uppercase text-muted-foreground flex-grow pl-2">Explorer</h3>
           )}
           {isDesktop && (
-            <Button variant="ghost" size="icon" className="h-8 w-8" onClick={onToggleExpand}>
+            <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-muted" onClick={onToggleExpand}>
               {isExpanded ? <PanelLeftClose className="w-4 h-4 text-foreground" /> : <PanelRightClose className="w-5 h-5 text-foreground" />}
             </Button>
           )}
