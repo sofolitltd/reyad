@@ -67,7 +67,7 @@ export default function BlogPostPage({ params }: Props) {
           <header className="relative h-64 md:h-96">
             <Image
               src={post.imageUrl}
-              alt={post.title}
+              alt={post.imageHint}
               fill
               className="object-cover"
               data-ai-hint={post.imageHint}

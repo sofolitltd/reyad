@@ -3,32 +3,27 @@
 
 import { useState, useEffect } from 'react';
 
-export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false);
+export function useMediaQuery(query: string) {
+  const [isMounted, setIsMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Ensure window is defined
-    if (typeof window === 'undefined') {
-      return;
-    }
+    setIsMounted(true);
 
     const media = window.matchMedia(query);
-    if (media.matches !== matches) {
-      setMatches(media.matches);
-    }
-    
     const listener = () => {
-      setMatches(media.matches);
+      setIsDesktop(media.matches);
     };
+
+    // Set initial state
+    listener();
     
-    // Use addEventListener for modern browsers
     media.addEventListener('change', listener);
     
     return () => {
-      // Use removeEventListener for cleanup
       media.removeEventListener('change', listener);
     };
-  }, [matches, query]);
+  }, [query]);
 
-  return matches;
+  return { isDesktop, isMounted };
 }

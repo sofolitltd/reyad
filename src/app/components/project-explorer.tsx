@@ -128,7 +128,7 @@ export function ProjectExplorer({
   isExpanded,
   onToggleExpand,
   isMobile = false,
-  isDesktop,
+  isDesktop = true,
 }: {
   onSelectFile: (fileId: string) => void;
   activeFile: string;

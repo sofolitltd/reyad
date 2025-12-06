@@ -1,6 +1,6 @@
 
 "use client";
-import React, { useState, useEffect } from "react";
+import React, from 'react';
 import { ProjectExplorer } from "./project-explorer";
 import { IdeFooter } from "./ide-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -14,18 +14,25 @@ interface IdeLayoutProps {
 }
 
 export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps) {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
-  const [isExplorerOpen, setIsExplorerOpen] = useState(true);
+  const { isDesktop, isMounted } = useMediaQuery("(min-width: 768px)");
+  const [isExplorerOpen, setIsExplorerOpen] = React.useState(true);
 
-  useEffect(() => {
-    setIsExplorerOpen(isDesktop);
-  }, [isDesktop]);
+  React.useEffect(() => {
+    if (isMounted) {
+      setIsExplorerOpen(isDesktop);
+    }
+  }, [isDesktop, isMounted]);
 
   const handleToggleExpand = () => {
     if (isDesktop) {
       setIsExplorerOpen(!isExplorerOpen);
     }
   };
+
+  if (!isMounted) {
+    // Prevent rendering until the media query has been resolved on the client
+    return null;
+  }
 
   if (!isDesktop) {
     return (
