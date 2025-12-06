@@ -86,7 +86,7 @@ const ExplorerNode = ({
   if (node.type === 'folder') {
     return (
       <div className="mb-2">
-        <div className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted" onClick={() => setIsOpen(!isOpen)}>
+        <div className="flex items-center cursor-pointer p-1 rounded-md hover:bg-primary/20" onClick={() => setIsOpen(!isOpen)}>
           {isExpanded && <ChevronRight className={cn('w-4 h-4 mr-1 transition-transform', isOpen && 'rotate-90')} />}
           {isOpen ? <FolderOpen className="w-4 h-4 mr-2 text-foreground" /> : <Folder className="w-4 h-4 mr-2 text-foreground" />}
           {isExpanded && <span>{node.name}</span>}
@@ -113,7 +113,7 @@ const ExplorerNode = ({
 
   return (
     <div
-      className={cn('flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted', activeFile === node.id && 'bg-background')}
+      className={cn('flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-primary/20', activeFile === node.id && 'bg-background')}
       onClick={handleNodeClick}
     >
       <Icon className={cn('w-4 h-4 mx-2', node.color || 'text-muted-foreground')} />
@@ -200,7 +200,7 @@ export function ProjectExplorer({
                         onClick={() => file.id && handleFileSelect(file.id)}
                         aria-label={file.name}
                         variant={activeFile === file.id ? 'secondary' : 'ghost'}
-                        className={cn('h-10 w-10 rounded-lg')}
+                        className={cn('h-10 w-10 rounded-lg hover:bg-primary/20')}
                       >
                         <file.icon className={cn('w-6 h-6', file.color)} />
                       </Button>
