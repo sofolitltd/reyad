@@ -1,5 +1,7 @@
-import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
-import {PlaceHolderImages} from '@/lib/placeholder-images';
+
+'use client';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -9,13 +11,10 @@ import {
   FaYoutube,
   FaWhatsapp,
 } from 'react-icons/fa';
-import {
-  GitBranch,
-  User,
-  Feather,
-  Download,
-} from 'lucide-react';
-import {Button} from '@/components/ui/button';
+import { GitBranch, User, Feather, Download } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import { DownloadCvDialog } from './download-cv-dialog';
 
 const profileImage = PlaceHolderImages.find(img => img.id === 'profile-picture');
 
@@ -99,101 +98,106 @@ class ProfileCard extends StatelessWidget {
 `;
 
 export function AboutSection() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleDownloadClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDialogOpen(true);
+  };
   return (
-    <section id="about" className="scroll-mt-20 ">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-8">
-        {/* Left Column: Profile & Info */}
-        <div className="space-y-8">
-          <Card className="overflow-hidden text-center">
-            <CardContent className="p-6">
-              {profileImage && (
-                <Image
-                  src="/reyad_pp.png"
-                  alt="Developer's Headshot"
-                  width={120}
-                  height={120}
-                  className="rounded-xl object-cover mx-auto mb-4"
-                  data-ai-hint={profileImage.imageHint}
-                />
-              )}
-              <h3 className="text-2xl font-bold font-headline">Md Asifuzzaman Reyad</h3>
-              <p className="text-primary">Flutter Developer</p>
-              <div className="flex justify-center gap-2 mt-4">
-                {socialLinks.map(link => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    aria-label={link.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-primary/20 transition-colors group"
-                  >
-                    <link.icon
-                      className="w-5 h-5 text-muted-foreground transition-colors group-hover:text-primary"
-                    />
-                  </Link>
-                ))}
-              </div>
-              <div className="mt-6">
-                <Button asChild>
-                  <Link href="/Md%20Asifuzzaman%20Reyad%20-%20dev%2012-25.pdf" download>
+    <>
+      <DownloadCvDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
+      <section id="about" className="scroll-mt-20 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-8">
+          {/* Left Column: Profile & Info */}
+          <div className="space-y-8">
+            <Card className="overflow-hidden text-center">
+              <CardContent className="p-6">
+                {profileImage && (
+                  <Image
+                    src="/reyad_pp.png"
+                    alt="Developer's Headshot"
+                    width={120}
+                    height={120}
+                    className="rounded-xl object-cover mx-auto mb-4"
+                    data-ai-hint={profileImage.imageHint}
+                  />
+                )}
+                <h3 className="text-2xl font-bold font-headline">Md Asifuzzaman Reyad</h3>
+                <p className="text-primary">Flutter Developer</p>
+                <div className="flex justify-center gap-2 mt-4">
+                  {socialLinks.map(link => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      aria-label={link.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-muted/50 hover:bg-primary/20 transition-colors group"
+                    >
+                      <link.icon className="w-5 h-5 text-muted-foreground transition-colors group-hover:text-primary" />
+                    </Link>
+                  ))}
+                </div>
+                <div className="mt-6">
+                  <Button onClick={handleDownloadClick}>
                     <Download className="mr-2 h-4 w-4" />
                     Download CV
-                  </Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline text-xl flex items-center gap-2">
-                <User className="w-5 h-5 text-primary" />
-                Who I Am
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                I am a passionate and results-driven Flutter developer with a knack for creating
-                beautiful, high-performance cross-platform applications. My journey into mobile
-                development started with a fascination for building things that people can interact
-                with on-the-go.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline text-xl flex items-center gap-2">
-                <Feather className="w-5 h-5 text-primary" />
-                My Philosophy
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                I believe in clean code, elegant design, and user-centric solutions. For me,
-                developing an app is not just about writing code; it's about crafting an experience
-                that is both intuitive and enjoyable for the end-user.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-headline text-xl flex items-center gap-2">
+                  <User className="w-5 h-5 text-primary" />
+                  Who I Am
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  I am a passionate and results-driven Flutter developer with a knack for creating
+                  beautiful, high-performance cross-platform applications. My journey into mobile
+                  development started with a fascination for building things that people can
+                  interact with on-the-go.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-headline text-xl flex items-center gap-2">
+                  <Feather className="w-5 h-5 text-primary" />
+                  My Philosophy
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  I believe in clean code, elegant design, and user-centric solutions. For me,
+                  developing an app is not just about writing code; it's about crafting an
+                  experience that is both intuitive and enjoyable for the end-user.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
 
-        {/* Right Column: Code Snippet */}
-        <div className="space-y-8">
-          <Card className="h-full flex flex-col">
-            <CardHeader>
-              <CardTitle className="font-headline text-xl flex items-center gap-2">
-                <GitBranch className="w-5 h-5 text-primary" />
-                What I'm Working On
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <pre className="language-dart bg-muted/40 rounded-lg p-4 text-sm font-code h-full overflow-x-auto whitespace-pre-wrap">
-                <code>{codeSnippet}</code>
-              </pre>
-            </CardContent>
-          </Card>
+          {/* Right Column: Code Snippet */}
+          <div className="space-y-8">
+            <Card className="h-full flex flex-col">
+              <CardHeader>
+                <CardTitle className="font-headline text-xl flex items-center gap-2">
+                  <GitBranch className="w-5 h-5 text-primary" />
+                  What I'm Working On
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <pre className="language-dart bg-muted/40 rounded-lg p-4 text-sm font-code h-full overflow-x-auto whitespace-pre-wrap">
+                  <code>{codeSnippet}</code>
+                </pre>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
