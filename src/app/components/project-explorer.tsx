@@ -199,8 +199,8 @@ export function ProjectExplorer({
                       <Button
                         onClick={() => file.id && handleFileSelect(file.id)}
                         aria-label={file.name}
-                        variant={activeFile === file.id ? 'secondary' : 'ghost'}
-                        className={cn('h-10 w-10 rounded-lg hover:bg-primary/20')}
+                        variant={'ghost'}
+                        className={cn('h-10 w-10 rounded-lg hover:bg-primary/20', activeFile === file.id && 'bg-background')}
                       >
                         <file.icon className={cn('w-6 h-6', file.color)} />
                       </Button>
