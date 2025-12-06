@@ -44,21 +44,93 @@
     },
     {
       "id": "blog-1-thumbnail",
-      "description": "Thumbnail for the first blog post.",
-      "imageUrl": "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2RlJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzY0ODc0NjM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "code abstract"
+      "description": "Abstract image of code on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "code screen"
     },
     {
       "id": "blog-2-thumbnail",
-      "description": "Thumbnail for the second blog post.",
-      "imageUrl": "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzY0ODYxNjM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "technology abstract"
+      "description": "Geometric shapes representing UI components.",
+      "imageUrl": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "UI components"
     },
     {
       "id": "blog-3-thumbnail",
-      "description": "Thumbnail for the third blog post.",
-      "imageUrl": "https://images.unsplash.com/photo-1697952431907-8542919a16b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaXJjdWl0JTIwYm9hcmR8ZW58MHx8fHwxNzY0ODM1MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "circuit board"
+      "description": "Blueprint or architectural drawing.",
+      "imageUrl": "https://images.unsplash.com/photo-1542037104857-e8777a584318?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "layout blueprint"
+    },
+    {
+      "id": "blog-4-thumbnail",
+      "description": "Image of a road map or a directional sign.",
+      "imageUrl": "https://images.unsplash.com/photo-1553531384-411a247ccd73?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "navigation map"
+    },
+    {
+      "id": "blog-5-thumbnail",
+      "description": "Image of a flowing river or network.",
+      "imageUrl": "https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "data stream"
+    },
+    {
+      "id": "blog-6-thumbnail",
+      "description": "Image of a lock or a secure vault.",
+      "imageUrl": "https://images.unsplash.com/photo-1584433144850-243a059c3588?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "secure lock"
+    },
+    {
+      "id": "blog-7-thumbnail",
+      "description": "Image of a cloud database icon.",
+      "imageUrl": "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "cloud database"
+    },
+    {
+      "id": "blog-8-thumbnail",
+      "description": "Abstract moving lights or shapes.",
+      "imageUrl": "https://images.unsplash.com/photo-1534237716618-a46b3f5e5fed?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "abstract animation"
+    },
+    {
+      "id": "blog-9-thumbnail",
+      "description": "Split image showing a light and dark scene.",
+      "imageUrl": "https://images.unsplash.com/photo-1533414408880-405527185f1c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "light dark"
+    },
+    {
+      "id": "blog-10-thumbnail",
+      "description": "Network cables or data center.",
+      "imageUrl": "https://images.unsplash.com/photo-1593435713463-e383a88137f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "network data"
+    },
+    {
+      "id": "blog-11-thumbnail",
+      "description": "A person filling out a form on a clipboard.",
+      "imageUrl": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "user form"
+    },
+    {
+      "id": "blog-12-thumbnail",
+      "description": "A phone showing a settings screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1616445524229-f7d9324b33d6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "device storage"
+    },
+    {
+      "id": "blog-13-thumbnail",
+      "description": "A fast-moving object or car, blurred to show speed.",
+      "imageUrl": "https://images.unsplash.com/photo-1534792477659-b0c3a99e4604?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "app performance"
+    },
+    {
+      "id": "blog-14-thumbnail",
+      "description": "A checklist or quality assurance icon.",
+      "imageUrl": "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "app testing"
+    },
+    {
+      "id": "blog-15-thumbnail",
+      "description": "A rocket launching, symbolizing a product release.",
+      "imageUrl": "https://images.unsplash.com/photo-1543357484-a8885e349769?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "app deployment"
     }
   ]
 }

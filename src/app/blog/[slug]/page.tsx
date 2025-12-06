@@ -1,3 +1,4 @@
+
 'use client';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
@@ -15,33 +16,48 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
-export default function BlogPostPage() {
-  const params = useParams();
+
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = posts.find((p) => p.slug === params.slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  return {
+    title: `${post.title} | Reyad's Blog`,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: [
+        {
+          url: post.imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+  };
+}
+
+export default function BlogPostPage({ params }: Props) {
   const { slug } = params;
 
   const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <SiteHeader />
-        <div className="flex-1 flex items-center justify-center text-center">
-          <div>
-            <h1 className="text-4xl font-bold mb-4">Post not found</h1>
-            <p className="text-muted-foreground mb-8">
-              Sorry, we couldn't find the blog post you're looking for.
-            </p>
-            <Button asChild>
-              <Link href="/">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   return (
@@ -107,6 +123,9 @@ export default function BlogPostPage() {
                     </p>
                     <p>
                       Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet.
+                    </p>
+                     <p>
+                      Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam.
                     </p>
                   </div>
 
