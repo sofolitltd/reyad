@@ -1,10 +1,10 @@
+
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import type { Post } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,13 +12,15 @@ import { Badge } from "@/components/ui/badge";
 import { posts } from "@/lib/blog-posts";
 
 export function BlogSection() {
+  const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   return (
     <section id="blog" className="scroll-mt-20">
       <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl mb-12 font-headline">
         From the Blog
       </h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
-        {posts.map((post) => (
+        {sortedPosts.map((post) => (
           <Link href={`/blog/${post.slug}`} key={post.id}>
             <Card className="flex flex-col h-full overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
               <CardHeader className="p-0">
