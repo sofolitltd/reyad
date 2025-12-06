@@ -35,7 +35,6 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
           <main className="flex-1 overflow-y-auto">
             {children}
           </main>
-          <IdeFooter />
         </div>
         <div className="fixed bottom-0 left-0 right-0 z-30">
           <ProjectExplorer
