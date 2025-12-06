@@ -1,7 +1,7 @@
 
 'use client';
 
-import parse, { DOMNode, Element, domToReact } from 'html-react-parser';
+import parse, { DOMNode, Element } from 'html-react-parser';
 import { CodeBlock } from './code-block';
 
 interface BlogPostContentProps {
@@ -21,15 +21,12 @@ export function BlogPostContent({ content }: BlogPostContentProps) {
           return <CodeBlock code={code.trim()} />;
         }
       }
-      return domNode;
     },
   };
 
-  const parsedContent = parse(content, options);
-
   return (
     <div className="prose prose-invert prose-lg max-w-none mx-auto text-foreground">
-      {typeof parsedContent === 'string' ? parsedContent : domToReact(parsedContent as DOMNode[])}
+      {parse(content, options)}
     </div>
   );
 }
