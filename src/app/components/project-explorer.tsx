@@ -135,12 +135,14 @@ export function ProjectExplorer({
   isExpanded,
   onToggleExpand,
   isMobile = false,
+  isDesktop
 }: {
   onSelectFile: (fileId: string) => void;
   activeFile: string;
   isExpanded: boolean;
   onToggleExpand: () => void;
   isMobile?: boolean;
+  isDesktop?: boolean;
 }) {
 
   const handleFileSelect = (fileId: string) => {

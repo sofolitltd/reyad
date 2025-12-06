@@ -44,6 +44,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
             isExpanded={false}
             onToggleExpand={() => {}}
             isMobile
+            isDesktop={isDesktop}
           />
         </div>
       </div>
@@ -65,6 +66,7 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
             activeFile={activeFile}
             isExpanded={isExplorerOpen}
             onToggleExpand={handleToggleExpand}
+            isDesktop={isDesktop}
           />
         </aside>
         
