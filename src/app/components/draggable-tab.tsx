@@ -1,11 +1,13 @@
+
 "use client";
 
 import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
+
 
 type Section = {
   id: string;
@@ -16,7 +18,7 @@ type Section = {
 
 interface DraggableTabProps {
   section: Section;
-  handleCloseTab: (e: React.MouseEvent, tabId: string) => void;
+  handleCloseTab: (tabId: string) => void;
 }
 
 export function DraggableTab({ section, handleCloseTab }: DraggableTabProps) {
@@ -36,6 +38,11 @@ export function DraggableTab({ section, handleCloseTab }: DraggableTabProps) {
     position: "relative" as const,
   };
 
+  const onClose = (e: React.MouseEvent) => {
+    e.stopPropagation(); // prevent the tab from being selected
+    handleCloseTab(section.id);
+  };
+
   return (
     <TabsTrigger
       ref={setNodeRef}
@@ -47,16 +54,17 @@ export function DraggableTab({ section, handleCloseTab }: DraggableTabProps) {
     >
       <section.icon className="w-4 h-4 mr-2" />
       <span className="mr-2">{section.label}</span>
-      <Button
-        variant="ghost"
-        size="icon"
-        className="h-5 w-5 rounded-sm invisible group-hover:visible data-[state=active]:group-hover:visible"
-        onClick={(e) => handleCloseTab(e, section.id)}
-        // Prevent dnd from activating on close button click
-        onPointerDownCapture={(e) => e.stopPropagation()}
+      <div
+        role="button"
+        aria-label={`Close ${section.label} tab`}
+        onClick={onClose}
+        onPointerDownCapture={(e) => e.stopPropagation()} // Prevent dnd from activating on close button click
+        className={cn(
+          "h-5 w-5 rounded-sm flex items-center justify-center invisible group-hover:visible data-[state=active]:group-hover:visible hover:bg-muted-foreground/20"
+        )}
       >
         <X className="w-3 h-3" />
-      </Button>
+      </div>
     </TabsTrigger>
   );
 }

@@ -25,8 +25,30 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
     if (isDesktop) {
       setIsExplorerOpen(!isExplorerOpen);
     }
-    // On mobile, do nothing to prevent expansion.
   };
+
+  if (!isDesktop) {
+    return (
+      <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
+        <SiteHeader />
+        <div className="flex-1 flex flex-col pt-12 pb-16 overflow-hidden">
+          <main className="flex-1 overflow-y-auto">
+            {children}
+          </main>
+          <IdeFooter />
+        </div>
+        <div className="fixed bottom-0 left-0 right-0 z-30">
+          <ProjectExplorer
+            onSelectFile={onSelectFile}
+            activeFile={activeFile}
+            isExpanded={false}
+            onToggleExpand={() => {}}
+            isMobile
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
@@ -50,7 +72,6 @@ export function IdeLayout({ children, onSelectFile, activeFile }: IdeLayoutProps
           <main className="flex-1 overflow-y-auto">
             {children}
           </main>
-
           <IdeFooter  />
         </div>
       </div>

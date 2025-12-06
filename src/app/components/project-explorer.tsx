@@ -17,7 +17,6 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Separator } from "@/components/ui/separator";
 
 const structure = {
   name: "portfolio",
@@ -68,8 +67,6 @@ const ExplorerNode = ({
 
   const handleNodeClick = () => {
     if (node.id === 'download-cv') {
-      // This is a special case to trigger a download.
-      // We create a temporary link and click it.
       const link = document.createElement('a');
       link.href = '/Md%20Asifuzzaman%20Reyad%20-%20dev%2012-25.pdf';
       link.download = 'Md Asifuzzaman Reyad - dev 12-25.pdf';
@@ -137,11 +134,13 @@ export function ProjectExplorer({
   activeFile,
   isExpanded,
   onToggleExpand,
+  isMobile = false,
 }: {
   onSelectFile: (fileId: string) => void;
   activeFile: string;
   isExpanded: boolean;
   onToggleExpand: () => void;
+  isMobile?: boolean;
 }) {
 
   const handleFileSelect = (fileId: string) => {
@@ -161,6 +160,28 @@ export function ProjectExplorer({
   const publicFiles = structure.children.find(c => c.name === 'public')?.children || [];
   const allFiles = [...libFiles, ...publicFiles];
 
+  if (isMobile) {
+    return (
+        <div className="bg-sidebar border-t border-sidebar-border flex justify-around items-center h-16">
+            {allFiles.map((file) => (
+                <Button 
+                    key={file.id} 
+                    onClick={() => file.id && handleFileSelect(file.id)}
+                    aria-label={file.name}
+                    variant="ghost"
+                    className={cn(
+                        "h-full w-full flex-col gap-1 text-xs rounded-none", 
+                        activeFile === file.id ? "bg-background text-primary" : "text-muted-foreground"
+                    )}
+                    >
+                    <file.icon className={cn("w-5 h-5")} />
+                    <span>{file.name.split('.')[0]}</span>
+                </Button>
+            ))}
+        </div>
+    );
+  }
+
   return (
     <div className="p-2">
       <div
@@ -174,6 +195,7 @@ export function ProjectExplorer({
             Explorer
           </h3>
         )}
+        {isDesktop && (
          <Button variant="ghost" size="icon" className="h-8 w-8" onClick={onToggleExpand}>
             {isExpanded ? (
                 <PanelLeftClose className="w-4 h-4 text-foreground" />
@@ -181,6 +203,7 @@ export function ProjectExplorer({
                 <PanelRightClose className="w-5 h-5 text-foreground" />
             )}
         </Button>
+        )}
       </div>
       <div className="mt-2">
         {isExpanded ? (

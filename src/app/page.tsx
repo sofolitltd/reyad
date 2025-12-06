@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   DndContext,
   closestCenter,
@@ -39,10 +40,20 @@ export default function Home() {
   const [openTabs, setOpenTabs] = useState(allSections);
   const [activeTab, setActiveTab] = useState("about");
   const [isClient, setIsClient] = useState(false);
+  const tabsListRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (isClient && tabsListRef.current) {
+      const activeTabNode = tabsListRef.current.querySelector(`[data-state="active"]`);
+      if (activeTabNode) {
+        activeTabNode.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [activeTab, isClient]);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -61,20 +72,16 @@ export default function Home() {
     setActiveTab(fileId);
   };
 
-  const handleCloseTab = (e: React.MouseEvent, tabId: string) => {
-    e.stopPropagation(); // prevent the tab from being selected
+  const handleCloseTab = (tabId: string) => {
     const tabIndex = openTabs.findIndex((tab) => tab.id === tabId);
 
-    // Remove the tab
     const newOpenTabs = openTabs.filter((tab) => tab.id !== tabId);
     setOpenTabs(newOpenTabs);
 
-    // If we closed the active tab, decide on the new active tab
     if (activeTab === tabId) {
       if (newOpenTabs.length === 0) {
         setActiveTab("");
       } else {
-        // Activate the previous tab, or the first one if the closed tab was the first
         const newActiveIndex = Math.max(0, tabIndex - 1);
         setActiveTab(newOpenTabs[newActiveIndex].id);
       }
@@ -96,13 +103,13 @@ export default function Home() {
   return (
     <IdeLayout onSelectFile={handleSelectFile} activeFile={activeTab}>
       <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col h-full">
-        {isClient ? (
-          <DndContext
-            sensors={sensors}
-            collisionDetection={closestCenter}
-            onDragEnd={handleDragEnd}
-          >
-            <TabsList className="bg-sidebar border-b border-sidebar-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
+        <TabsList ref={tabsListRef} className="bg-sidebar border-b border-sidebar-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
+          {isClient ? (
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
+            >
               <SortableContext items={openTabs} strategy={horizontalListSortingStrategy}>
                 {openTabs.map((section) => (
                   <DraggableTab
@@ -112,19 +119,18 @@ export default function Home() {
                   />
                 ))}
               </SortableContext>
-            </TabsList>
-          </DndContext>
-        ) : (
-          <TabsList className="bg-sidebar border-b border-sidebar-border justify-start rounded-none p-0 h-10 overflow-x-auto sticky top-0 z-10">
-            {openTabs.map((section) => (
+            </DndContext>
+          ) : (
+            openTabs.map((section) => (
               <DraggableTab
                 key={section.id}
                 section={section}
                 handleCloseTab={handleCloseTab}
               />
-            ))}
-          </TabsList>
-        )}
+            ))
+          )}
+        </TabsList>
+        
 
         <div className="bg-background flex-1 overflow-y-auto">
           {openTabs.length > 0 ? (
