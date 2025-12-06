@@ -18,6 +18,13 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { DownloadCvDialog } from './download-cv-dialog';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+
 
 const structure = {
   name: 'portfolio',
@@ -79,7 +86,7 @@ const ExplorerNode = ({
   if (node.type === 'folder') {
     return (
       <div className="mb-2">
-        <div className="flex items-center cursor-pointer p-1 rounded-md hover:bg-primary/20" onClick={() => setIsOpen(!isOpen)}>
+        <div className="flex items-center cursor-pointer p-1 rounded-md hover:bg-muted" onClick={() => setIsOpen(!isOpen)}>
           {isExpanded && <ChevronRight className={cn('w-4 h-4 mr-1 transition-transform', isOpen && 'rotate-90')} />}
           {isOpen ? <FolderOpen className="w-4 h-4 mr-2 text-foreground" /> : <Folder className="w-4 h-4 mr-2 text-foreground" />}
           {isExpanded && <span>{node.name}</span>}
@@ -106,7 +113,7 @@ const ExplorerNode = ({
 
   return (
     <div
-      className={cn('flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-primary/20', activeFile === node.id && 'bg-background')}
+      className={cn('flex items-center cursor-pointer p-1 rounded-md mb-1 hover:bg-muted', activeFile === node.id && 'bg-background')}
       onClick={handleNodeClick}
     >
       <Icon className={cn('w-4 h-4 mx-2', node.color || 'text-muted-foreground')} />
@@ -184,18 +191,27 @@ export function ProjectExplorer({
           {isExpanded ? (
             <ExplorerNode node={structure} onSelectFile={onSelectFile} activeFile={activeFile} isExpanded={isExpanded} onDownloadRequest={() => setIsDialogOpen(true)} />
           ) : (
-            <div className="flex flex-col items-center gap-4 mt-4">
-              {allFiles.map(file => (
-                <Button
-                  key={file.id}
-                  onClick={() => file.id && handleFileSelect(file.id)}
-                  aria-label={file.name}
-                  className={cn('h-10 w-10 rounded-md', activeFile === file.id ? 'bg-background' : 'bg-transparent hover:bg-muted')}
-                >
-                  <file.icon className={cn('w-6 h-6 hover:text-current', file.color)} />
-                </Button>
-              ))}
-            </div>
+            <TooltipProvider>
+              <div className="flex flex-col items-center gap-2 mt-2">
+                {allFiles.map(file => (
+                  <Tooltip key={file.id}>
+                    <TooltipTrigger asChild>
+                      <Button
+                        onClick={() => file.id && handleFileSelect(file.id)}
+                        aria-label={file.name}
+                        variant={activeFile === file.id ? 'secondary' : 'ghost'}
+                        className={cn('h-10 w-10 rounded-lg')}
+                      >
+                        <file.icon className={cn('w-6 h-6', file.color)} />
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent side="right" sideOffset={5}>
+                      <p>{file.name.split('.')[0]}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                ))}
+              </div>
+            </TooltipProvider>
           )}
         </div>
       </div>

@@ -20,7 +20,7 @@ export function SkillsSection() {
       <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl mb-12 font-headline text-foreground">
         My Technical Arsenal
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-8">
         {skills.map((skill) => (
           <Card
             key={skill.name}
