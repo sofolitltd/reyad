@@ -26,4 +26,5 @@ export type Post = {
   imageHint: string;
   date: string;
   author: string;
+  content: string;
 };

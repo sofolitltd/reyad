@@ -44,93 +44,153 @@
     },
     {
       "id": "blog-1-thumbnail",
-      "description": "Abstract image of code on a screen.",
-      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "code screen"
     },
     {
       "id": "blog-2-thumbnail",
-      "description": "Geometric shapes representing UI components.",
-      "imageUrl": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "UI components"
     },
     {
       "id": "blog-3-thumbnail",
-      "description": "Blueprint or architectural drawing.",
-      "imageUrl": "https://images.unsplash.com/photo-1542037104857-e8777a584318?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1542037104857-e8777a584318?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "layout blueprint"
     },
     {
       "id": "blog-4-thumbnail",
-      "description": "Image of a road map or a directional sign.",
-      "imageUrl": "https://images.unsplash.com/photo-1553531384-411a247ccd73?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1553531384-411a247ccd73?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "navigation map"
     },
     {
       "id": "blog-5-thumbnail",
-      "description": "Image of a flowing river or network.",
-      "imageUrl": "https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "data stream"
     },
     {
       "id": "blog-6-thumbnail",
-      "description": "Image of a lock or a secure vault.",
-      "imageUrl": "https://images.unsplash.com/photo-1584433144850-243a059c3588?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1584433144850-243a059c3588?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "secure lock"
     },
     {
       "id": "blog-7-thumbnail",
-      "description": "Image of a cloud database icon.",
-      "imageUrl": "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "cloud database"
     },
     {
       "id": "blog-8-thumbnail",
-      "description": "Abstract moving lights or shapes.",
-      "imageUrl": "https://images.unsplash.com/photo-1534237716618-a46b3f5e5fed?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1534237716618-a46b3f5e5fed?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "abstract animation"
     },
     {
       "id": "blog-9-thumbnail",
-      "description": "Split image showing a light and dark scene.",
-      "imageUrl": "https://images.unsplash.com/photo-1533414408880-405527185f1c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1533414408880-405527185f1c?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "light dark"
     },
     {
       "id": "blog-10-thumbnail",
-      "description": "Network cables or data center.",
-      "imageUrl": "https://images.unsplash.com/photo-1593435713463-e383a88137f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1593435713463-e383a88137f4?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "network data"
     },
     {
       "id": "blog-11-thumbnail",
-      "description": "A person filling out a form on a clipboard.",
-      "imageUrl": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "user form"
     },
     {
       "id": "blog-12-thumbnail",
-      "description": "A phone showing a settings screen.",
-      "imageUrl": "https://images.unsplash.com/photo-1616445524229-f7d9324b33d6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1616445524229-f7d9324b33d6?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "device storage"
     },
     {
       "id": "blog-13-thumbnail",
-      "description": "A fast-moving object or car, blurred to show speed.",
-      "imageUrl": "https://images.unsplash.com/photo-1534792477659-b0c3a99e4604?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1534792477659-b0c3a99e4604?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "app performance"
     },
     {
       "id": "blog-14-thumbnail",
-      "description": "A checklist or quality assurance icon.",
-      "imageUrl": "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "app testing"
     },
     {
       "id": "blog-15-thumbnail",
-      "description": "A rocket launching, symbolizing a product release.",
-      "imageUrl": "https://images.unsplash.com/photo-1543357484-a8885e349769?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1543357484-a8885e349769?q=80&w=1200&auto=format&fit=crop",
       "imageHint": "app deployment"
+    },
+    {
+      "id": "blog-16-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "API code"
+    },
+    {
+      "id": "blog-17-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1633412802994-5c928c75e6b2?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "flutter code"
+    },
+    {
+      "id": "blog-18-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "clean code"
+    },
+    {
+      "id": "blog-19-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "web development"
+    },
+    {
+      "id": "blog-20-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "mobile development"
+    },
+    {
+      "id": "blog-21-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1599658880121-d41a502fac2c?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "firebase logo"
+    },
+    {
+      "id": "blog-22-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "data security"
+    },
+    {
+      "id": "blog-23-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1629904853716-f0bc64219491?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "UI design"
+    },
+    {
+      "id": "blog-24-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "responsive design"
+    },
+    {
+      "id": "blog-25-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "mobile UI"
+    },
+    {
+      "id": "blog-26-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1516116216624-53e6973bea1c?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "git branches"
+    },
+    {
+      "id": "blog-27-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "developer tools"
+    },
+    {
+      "id": "blog-28-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1507721999472-8ed4421b436d?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "creative coding"
+    },
+    {
+      "id": "blog-29-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1494548162494-384bba4ab999?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "career path"
+    },
+    {
+      "id": "blog-30-thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop",
+      "imageHint": "team collaboration"
     }
   ]
 }
